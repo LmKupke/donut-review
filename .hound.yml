@@ -119,7 +119,7 @@ LineEndConcatenation:
   Enabled: false
 
 LineLength:
-  Max: 80
+  Max: 180
 
 MethodLength:
   Enabled: false
@@ -276,3 +276,7 @@ Style/UnneededPercentQ:
 
 Metrics/AbcSize:
   Enabled: false
+
+ruby:
+  config_file: ruby-config.yml
+  enabled: true
