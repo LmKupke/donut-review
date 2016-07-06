@@ -12,19 +12,22 @@ feature "user create account", %Q{
   # [ ] Displays success message and redirects to user profile when form is submitted correctly
 
   scenario 'user sees sign-up registration Title' do
-    visit new_user_registration_path
+    visit root_path
+    click_link("Sign Up")
 
     expect(page).to have_content("Sign up")
   end
 
   scenario 'user sees sign-up form' do
-    visit new_user_registration_path
+    visit root_path
+    click_link("Sign Up")
 
     expect(page).to have_css("form#new_user")
   end
 
   scenario 'user sees all inputs form' do
-    visit new_user_registration_path
+    visit root_path
+    click_link("Sign Up")
     expect(page).to have_css("input#user_first_name")
     expect(page).to have_css("input#user_last_name")
     expect(page).to have_css("input#user_email")
@@ -33,7 +36,8 @@ feature "user create account", %Q{
   end
 
   scenario "user fills in form correctly" do
-    visit new_user_registration_path
+    visit root_path
+    click_link("Sign Up")
 
     fill_in("First Name", with: "John")
     fill_in("Last Name", with: "Smith")
@@ -46,7 +50,8 @@ feature "user create account", %Q{
   end
 
   scenario "user fills in form correctly" do
-    visit new_user_registration_path
+    visit root_path
+    click_link("Sign Up")
 
     fill_in("First Name", with: "John")
     fill_in("Last Name", with: "Smith")
