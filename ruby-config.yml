@@ -109,7 +109,7 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Description: Checks if uses of quotes inside expressions in interpolated strings
     match the configured preference.
-  Enabled: true
+  Enabled: false
   EnforcedStyle: single_quotes
   SupportedStyles:
   - single_quotes
