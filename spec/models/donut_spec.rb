@@ -6,12 +6,14 @@ RSpec.describe Donut, type: :model do
 
   it { should have_valid(:vendor_name).when(
     "Donna's Donuts",
-    "Dunkin' Donuts") }
+    "Dunkin' Donuts")
+  }
   it { should_not have_valid(:vendor_name).when("", nil) }
 
   it { should have_valid(:image).when(
-    "http://kitchenconfidante.com/wp-content/uploads/2013/02/Baked-Coconut-Doughnuts-Kitchen-Confidante-3.jpg",
-    "http://alloveralbany.com/images/schuyler_glazed_donut.jpg") }
+    "http://goo.gl/x1ezfx",
+    "http://goo.gl/lkxVyA") 
+  }
   it { should_not have_valid(:image).when("", nil) }
 
   it { should have_valid(:description).when("Great donut") }
