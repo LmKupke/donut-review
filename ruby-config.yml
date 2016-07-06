@@ -2,7 +2,8 @@ AllCops:
   Exclude:
     - "vendor/**/*"
     - "db/schema.rb"
-    - "spec/**/*"
+    - "spec/rails_helper"
+    - "spec/spec_helper"
     - "config/initializers/*"
   UseCache: false
 Style/CollectionMethods:
