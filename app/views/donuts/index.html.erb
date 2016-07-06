@@ -1,0 +1,11 @@
+<h1>Donut Judge Me</h1>
+
+<% @donuts.each do |donut| %>
+  <ul>
+    <li>
+      <%= link_to "#{donut.name}", donut_path(donut) %>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to "Add New Donut", new_donut_path %>
