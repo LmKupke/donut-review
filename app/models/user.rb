@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, allow_nil: false, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }, uniqueness: true
 
-
   def admin?
     role == "admin"
   end
