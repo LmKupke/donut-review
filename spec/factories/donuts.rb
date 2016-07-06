@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :donut do
-    name "Chocolate"
+    name "Glazed"
     description "A delicious donut"
     vendor_name "Blackbird"
-    image "http://goo.gl/UtSz7p"
+    image "http://upload.wikimedia.org/wikipedia/commons/a/a5/Glazed-Donut.jpg"
     user_id 4
   end
 end

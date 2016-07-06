@@ -8,30 +8,29 @@ feature "user sees a list of donuts", %{
   # ACCEPTANCE CRITERIA:
   # Root is Donut#index
   # See Links on Donut names
+  let(:donut) { Donut.create }
 
-  scenario "sees a list of donuts and a link for a new donut" do
-    @donut = create(:donut)
+    scenario "sees a list of donuts and a link for a new donut" do
 
-    visit donuts_path
+      visit donuts_path
 
-    expect(page).to have_content @donut.name
-    expect(page).to have_link @donut.name
+      expect(page).to have_content donut.name
+      expect(page).to have_link donut.name
 
-    click_link "Add New Donut"
+      click_link "Add New Donut"
 
-    expect(page).to have_content "New Donut Form"
-  end
+      expect(page).to have_content "New Donut Form"
+    end
 
-  scenario "clicks link and is taken to show page for a given donut" do
-    @donut = create(:donut)
+    scenario "clicks link and is taken to show page for a given donut" do
 
-    visit donuts_path
+      visit donuts_path
 
-    click_link @donut.name
+      click_link donut.name
 
-    expect(page).to have_content @donut.name
-    expect(page).to have_content @donut.description
-    expect(page).to have_content @donut.vendor_name
-    expect(page).to have_css("img[src*= '#{@donut.image}']")
+      expect(page).to have_content donut.name
+      expect(page).to have_content donut.description
+      expect(page).to have_content donut.vendor_name
+      expect(page).to have_content donut.image
   end
 end
