@@ -276,3 +276,9 @@ Style/UnneededPercentQ:
 
 Metrics/AbcSize:
   Enabled: false
+
+ruby:
+  config_file: ruby-config.yml
+  enabled: true
+  ignore_file: /spec
+  ignore_file: /config/initializers
