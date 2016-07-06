@@ -12,7 +12,7 @@ RSpec.describe Donut, type: :model do
 
   it { should have_valid(:image).when(
     "http://goo.gl/x1ezfx",
-    "http://goo.gl/lkxVyA") 
+    "http://goo.gl/lkxVyA")
   }
   it { should_not have_valid(:image).when("", nil) }
 
