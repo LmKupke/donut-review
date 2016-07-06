@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user sees a list of donuts", %Q{
+feature "user sees a list of donuts", %{
    As a user
    I want to be able to navigate to the donuts' page
    To look at delicious donuts
@@ -8,7 +8,6 @@ feature "user sees a list of donuts", %Q{
   # ACCEPTANCE CRITERIA:
   # Root is Donut#index
   # See Links on Donut names
-
 
   scenario "sees a list of donuts and a link for a new donut" do
     donut_1 = Donut.create(
@@ -18,16 +17,10 @@ feature "user sees a list of donuts", %Q{
       image: "http://kitchenconfidante.com/wp-content/uploads/2013/02/Baked-Coconut-Doughnuts-Kitchen-Confidante-3.jpg",
       user_id: 4)
 
-    donut_2 = Donut.create(
-      name: "Glazed",
-      vendor_name: "Dunkin' Donuts",
-      image: "http://alloveralbany.com/images/schuyler_glazed_donut.jpg",
-      user_id: 7)
-
     visit donuts_path
 
     expect(page).to have_content "Coconut"
-    expect(page).to have_link "Glazed"
+    expect(page).to have_link "Coconut"
 
     click_link "Add New Donut"
 
