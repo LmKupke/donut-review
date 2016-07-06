@@ -279,4 +279,4 @@ Metrics/AbcSize:
 
 ruby:
   config_file: ruby-config.yml
-  enabled: false
+  enabled: true
