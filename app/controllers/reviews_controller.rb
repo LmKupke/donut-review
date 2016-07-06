@@ -10,6 +10,19 @@ class ReviewsController < ApplicationController
     @review.donut = @donut
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    redirect_to review_path(@review)
+  end
+
+  def destroy
+    @review.destroy
+  end
+
   private
 
   def review_params
