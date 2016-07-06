@@ -9,6 +9,4 @@ RSpec.describe Review, type: :model do
 
   it { should have_valid(:body).when("good donut", "bad donut") }
   it { should_not have_valid(:body).when("A" * 141) }
-
-
 end
