@@ -5,17 +5,20 @@
 */
 @import url(https://fonts.googleapis.com/css?family=Righteous|Imprima|Antic|Muli);
 body {
-  background-color: #F2F3EF;
+  background-color: #d6dbe0;
 }
 
 nav.top-bar, .sticky {
-  background-color: #d6dbe0;
-  opacity: 0.7;
-  color: white;
+  background-color: white;
 }
 
 nav.top-bar {
   a {
     font: 'Imprima';
   }
+}
+
+.top-bar {
+  width: 100%;
+  margin: 0px;
 }
