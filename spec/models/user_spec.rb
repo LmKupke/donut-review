@@ -17,8 +17,9 @@ RSpec.describe User, type: :model do
         expect(user.admin?).to eq(true)
       end
     end
+
     context "when user is a member" do
-      it 'should give back false' do
+      it "should give back false" do
         user = create(:user)
         expect(user.admin?).to eq(false)
       end

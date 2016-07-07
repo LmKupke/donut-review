@@ -119,7 +119,7 @@ LineEndConcatenation:
   Enabled: false
 
 LineLength:
-  Max: 80
+  Max: 180
 
 MethodLength:
   Enabled: false
@@ -280,5 +280,3 @@ Metrics/AbcSize:
 ruby:
   config_file: ruby-config.yml
   enabled: true
-  ignore_file: /spec
-  ignore_file: /config/initializers
