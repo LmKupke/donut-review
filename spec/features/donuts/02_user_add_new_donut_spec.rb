@@ -12,6 +12,8 @@ feature "user adds a new donuts", %{
   # [ ] Submitting correct form takes us to donut#show
   # [ ] Submitting incorrect renders the form with errors
   before(:each) do
+    @user = create(:user)
+    login_as(@user)
     visit root_path
   end
 
