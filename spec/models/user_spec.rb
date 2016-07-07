@@ -8,8 +8,7 @@ RSpec.describe User, type: :model do
   it { should_not have_valid(:last_name).when(nil, "") }
 
   it { should have_valid(:email).when("exam@gmail.com", "erlich@aviato.net")}
-  it { should_not have_valid(:email).when("exam", "exam@", "exam@gma",
-    "exam.com", nil)}
+  it { should_not have_valid(:email).when("exam", "ex@", "ex@gma","e.com", nil)}
 
   describe "#admin?" do
     context "when user is a admin" do
