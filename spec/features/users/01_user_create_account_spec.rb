@@ -22,7 +22,7 @@ feature "user create account", %{
   scenario 'user sees all inputs form' do
     visit root_path
     click_link("Sign Up")
-    
+
     expect(page).to have_css("input#user_first_name")
     expect(page).to have_css("input#user_last_name")
     expect(page).to have_css("input#user_email")
