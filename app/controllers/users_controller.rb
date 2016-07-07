@@ -19,5 +19,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    binding.pry
+    "Hello"
   end
 end
