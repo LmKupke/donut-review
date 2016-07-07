@@ -36,7 +36,7 @@ feature "user adds a new donuts", %{
 
     expect(page).to have_content("glazed")
   end
-  
+
   scenario "User fills in new donut form inputs incorrectly" do
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
