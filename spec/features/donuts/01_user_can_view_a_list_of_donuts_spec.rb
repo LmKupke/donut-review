@@ -22,7 +22,7 @@ feature "user sees a list of donuts", %{
     expect(page).to have_content "New Donut Form"
   end
 
-  scenario "clicks on the name of the donut and is taken to show page for that donut" do
+  scenario "clicks linked donut name and is taken to show page" do
     visit root_path
 
     click_link donut.name
