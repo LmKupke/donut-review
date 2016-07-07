@@ -20,19 +20,15 @@ class DonutsController < ApplicationController
     @donut = Donut.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   protected
 
   def new_donut_params
-    params.require(:donut).permit(:name, :vendor_name, :image, :description,
-      :user_id)
+    params.require(:donut).permit(
+      :name,
+      :vendor_name,
+      :image,
+      :description,
+      :user_id
+    )
   end
 end
