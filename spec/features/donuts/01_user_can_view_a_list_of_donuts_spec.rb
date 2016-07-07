@@ -8,6 +8,7 @@ feature "user sees a list of donuts", %{
   # ACCEPTANCE CRITERIA:
   # Root is Donut#index
   # See Links on Donut names
+
   let!(:donut) { create(:donut) }
   scenario "sees a list of donuts and a link for a new donut" do
     visit root_path
@@ -28,6 +29,7 @@ feature "user sees a list of donuts", %{
     expect(page).to have_content donut.name
     expect(page).to have_content donut.description
     expect(page).to have_content donut.vendor_name
+
     expect(page).to have_css("img#individual-donut")
   end
 end

@@ -2,7 +2,8 @@ AllCops:
   Exclude:
     - "vendor/**/*"
     - "db/schema.rb"
-    - "spec/**/*"
+    - "spec/rails_helper"
+    - "spec/spec_helper"
     - "config/initializers/*"
     - "app/assets/stylesheets/application.scss"
     - "app/assets/stylesheets/foundation_and_overrides.scss"
