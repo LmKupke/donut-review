@@ -10,6 +10,7 @@ feature "user sees a list of donuts", %{
   # See Links on Donut names
 
   let!(:donut) { create(:donut) }
+
   scenario "sees a list of donuts and a link for a new donut" do
     @user = create(:user)
     login_as(@user)
@@ -23,7 +24,7 @@ feature "user sees a list of donuts", %{
     expect(page).to have_content "New Donut Form"
   end
 
-  scenario "clicks link and is taken to show page for a given donut" do
+  scenario "clicks linked donut name and is taken to show page" do
     visit root_path
 
     click_link donut.name

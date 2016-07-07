@@ -7,18 +7,19 @@ RSpec.describe User, type: :model do
   it { should have_valid(:last_name).when("Ranger", "Kupke") }
   it { should_not have_valid(:last_name).when(nil, "") }
 
-  it { should have_valid(:email).when("example@gmail.com", "erlich@aviato.net") }
-  it { should_not have_valid(:email).when("example", "example@", "exam@gma", "example.com", nil) }
+  it { should have_valid(:email).when("exam@gmail.com", "erlich@aviato.net") }
+  it { should_not have_valid(:email).when("exam", "ex@", "e@gma","e.com", nil) }
 
   describe "#admin?" do
     context "when user is a admin" do
-      it "should give back true if user an admin" do
+      it "will return true if user an admin" do
         user = create(:user, role: "admin")
         expect(user.admin?).to eq(true)
       end
     end
+
     context "when user is a member" do
-      it 'should give back false' do
+      it "should give back false" do
         user = create(:user)
         expect(user.admin?).to eq(false)
       end

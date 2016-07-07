@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
-  def index
-  end
-
   def show
     @user = User.find(params['id'])
   end
+<<<<<<< HEAD
 
   def new
   end
@@ -22,4 +20,6 @@ class UsersController < ApplicationController
     binding.pry
     "Hello"
   end
+=======
+>>>>>>> 31fa1acb703c63746599fb5a9686d9a142616a24
 end
