@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it { should have_valid(:first_name).when("Jimmy", "Linc")}
-  it { should_not have_valid(:first_name).when(nil, "")}
+  it { should have_valid(:first_name).when("Jimmy", "Linc") }
+  it { should_not have_valid(:first_name).when(nil, "") }
 
-  it { should have_valid(:last_name).when("Ranger", "Kupke")}
-  it { should_not have_valid(:last_name).when(nil, "")}
+  it { should have_valid(:last_name).when("Ranger", "Kupke") }
+  it { should_not have_valid(:last_name).when(nil, "") }
 
-  it { should have_valid(:email).when("example@gmail.com", "erlich@aviato.net")}
-  it { should_not have_valid(:email).when("example", "example@", "exam@gma", "example.com", nil)}
+  it { should have_valid(:email).when("example@gmail.com", "erlich@aviato.net") }
+  it { should_not have_valid(:email).when("example", "example@", "exam@gma", "example.com", nil) }
 
   describe "#admin?" do
     context "when user is a admin" do
@@ -31,5 +31,4 @@ RSpec.describe User, type: :model do
       expect(user.fullname).to eq("Bertram Guilfoyle")
     end
   end
-
 end

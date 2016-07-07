@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-feature "user create account", %Q{
+feature "user create account", %{
   As a first-time unauthenticated user
   I want to sign up
   So that I can use the rest of the features.
 } do
-  #Acceptance Criteria
+  # Acceptance Criteria
   # [ ] Link to sign up exists in the nav-bar when not logged in
   # [ ] Sign-up page has a form
   # [ ] Form returns error when required fields are not entered correctly
-  # [ ] Displays success message and redirects to user profile when form is submitted correctly
+  # [ ] Displays success message and redirects to user profile when form
+  #     is submitted correctly
 
   scenario 'user sees sign-up registration Title' do
     visit root_path

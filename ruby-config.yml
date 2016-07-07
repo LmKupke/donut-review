@@ -4,6 +4,8 @@ AllCops:
     - "db/schema.rb"
     - "spec/**/*"
     - "config/initializers/*"
+    - "app/assets/stylesheets/application.scss"
+    - "app/assets/stylesheets/foundation_and_overrides.scss"
   UseCache: false
 Style/CollectionMethods:
   Description: Preferred collection methods.
