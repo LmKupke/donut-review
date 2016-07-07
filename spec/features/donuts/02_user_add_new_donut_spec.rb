@@ -14,14 +14,6 @@ feature "user adds a new donuts", %{
   before(:each) do
     visit root_path
   end
-  scenario "User sees Add New Donut link on root " do
-    expect(page).to have_link "Add New Donut"
-  end
-
-  scenario "User see a new donut form" do
-    click_link "Add New Donut"
-    expect(page).to have_css("form")
-  end
 
   scenario "User see a new donut form with correct inputs" do
     click_link "Add New Donut"
@@ -31,6 +23,7 @@ feature "user adds a new donuts", %{
     expect(page).to have_css("textarea#donut_description")
     expect(page).to have_css("input#donut_user_id")
   end
+
   scenario "User fills in new donut form inputs sucessfully!" do
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
@@ -43,6 +36,7 @@ feature "user adds a new donuts", %{
 
     expect(page).to have_content("glazed")
   end
+  
   scenario "User fills in new donut form inputs incorrectly" do
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
