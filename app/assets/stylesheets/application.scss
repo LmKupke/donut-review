@@ -3,3 +3,16 @@
 *= require_self
 *= require foundation_and_overrides
 */
+@import url(https://fonts.googleapis.com/css?family=Righteous|Imprima|Antic|Muli);
+body {
+  background-color: #F0F0D8;
+}
+
+nav.top-bar, .sticky {
+  background-color: #6E6460;
+}
+
+.sticky {
+  padding-left: 0px;
+  text-align: left;
+}

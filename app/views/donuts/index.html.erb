@@ -1,4 +1,5 @@
-<h1>Donut Judge Me</h1>
+<div class= "donut-body">
+<h1 class= "site-title">Donut Judge Me</h1>
 
 <% @donuts.each do |donut| %>
   <ul>
@@ -8,4 +9,5 @@
   </ul>
 <% end %>
 
-<%= link_to "Add New Donut", new_donut_path %>
+<%= link_to "Add New Donut", new_donut_path, class: 'add-link' %>
+</div>
