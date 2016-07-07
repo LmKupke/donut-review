@@ -5,7 +5,6 @@ feature "user adds a new donuts", %{
    I want to be able to add a new donut
    So that a user can add reviews
   } do
-
   # ACCEPTANCE CRITERIA:
   # [ X ] Root is Donut#index
   # [ ] See Add New Donut Link on Root
@@ -36,7 +35,7 @@ feature "user adds a new donuts", %{
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
     fill_in("Vendor name", with: "best")
-    fill_in("Image", with: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Glazed-Donut.jpg")
+    fill_in("Image", with: "https://goo.gl/dfV24M")
     fill_in("Description", with: "Everyone loves this donut.")
     fill_in("User", with: 1)
 
