@@ -7,6 +7,6 @@ FactoryGirl.define do
     profile_picture "photo.png"
     role "member"
     password "SatanCanada"
-    password_confirmation "SatanCanada" 
+    password_confirmation "SatanCanada"
   end
 end
