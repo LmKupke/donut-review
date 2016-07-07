@@ -6,6 +6,7 @@ $body-color: #d6dbe0;
 $white: #ffffff;
 
 @import url(https://fonts.googleapis.com/css?family=Righteous|Imprima|Antic|Muli);
+
 body {
   background-color: $body-color;
 }
@@ -16,12 +17,9 @@ body {
 }
 
 .top-bar {
+  margin: 0;
+  width: 100%;
   a {
     font: "Imprima";
   }
-}
-
-.top-bar {
-  margin: 0;
-  width: 100%;
 }
