@@ -1,22 +1,16 @@
 require 'rails_helper'
 
-feature "user create account", %Q{
+feature "user create account", %{
   As a first-time unauthenticated user
   I want to sign up
   So that I can use the rest of the features.
 } do
-  #Acceptance Criteria
+  # Acceptance Criteria
   # [ ] Link to sign up exists in the nav-bar when not logged in
   # [ ] Sign-up page has a form
   # [ ] Form returns error when required fields are not entered correctly
-  # [ ] Displays success message and redirects to user profile when form is submitted correctly
-
-  scenario 'user sees sign-up registration Title' do
-    visit root_path
-    click_link("Sign Up")
-
-    expect(page).to have_content("Sign up")
-  end
+  # [ ] Displays success message and redirects to user profile when form
+  #     is submitted correctly
 
   scenario 'user sees sign-up form' do
     visit root_path
@@ -28,6 +22,7 @@ feature "user create account", %Q{
   scenario 'user sees all inputs form' do
     visit root_path
     click_link("Sign Up")
+
     expect(page).to have_css("input#user_first_name")
     expect(page).to have_css("input#user_last_name")
     expect(page).to have_css("input#user_email")
