@@ -1,8 +1,9 @@
-<div class= "donut-body">
-<h1 class= "site-title">Donut Judge Me</h1>
-<div class="crop">
-  <img src="https://goo.gl/C0h5mO" alt="yum-town-usa" class="header-img"/>
+<div class="small-12 large-12 medium-12 crop columns">
+  <div class="small-offset-3 large-offset-3 medium-offset-2 columns">
+    <h1 class= "site-title shadow">Donut Judge Me</h1>
+  </div>
 </div>
+
 <% @donuts.each do |donut| %>
   <ul>
     <li>
@@ -12,4 +13,3 @@
 <% end %>
 
 <%= link_to "Add New Donut", new_donut_path, class: 'add-link' %>
-</div>
