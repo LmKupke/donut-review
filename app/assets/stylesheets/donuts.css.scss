@@ -10,7 +10,7 @@ $title-font-color: #d6dbe0;
 }
 
 .add-link {
- font-family: "Helvetica";
+  font-family: "Helvetica";
 }
 
 .crop {
@@ -23,13 +23,13 @@ $title-font-color: #d6dbe0;
 }
 
 .shadow {
-  position: relative;
-  top: -3px;
   left: -3px;
+  position: relative;
   text-shadow: 1px 1px $shadow,
               2px 2px $shadow,
               3px 3px $shadow,
               4px 4px $shadow,
               5px 5px $shadow,
               6px 6px $shadow;
+  top: -3px;
 }

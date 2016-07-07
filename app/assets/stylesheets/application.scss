@@ -1,24 +1,27 @@
-/*
-*= require_tree
-*= require_self
-*= require foundation_and_overrides
-*/
+//= require_tree
+//= require_self
+//= require foundation_and_overrides
+
+$body-color: #d6dbe0;
+$white: #ffffff;
+
 @import url(https://fonts.googleapis.com/css?family=Righteous|Imprima|Antic|Muli);
 body {
-  background-color: #d6dbe0;
+  background-color: $body-color;
 }
 
-nav.top-bar, .sticky {
-  background-color: white;
+.top-bar,
+.sticky {
+  background-color: $white;
 }
 
-nav.top-bar {
+.top-bar {
   a {
-    font: 'Imprima';
+    font: "Imprima";
   }
 }
 
 .top-bar {
-  width: 100%;
   margin: 0;
+  width: 100%;
 }
