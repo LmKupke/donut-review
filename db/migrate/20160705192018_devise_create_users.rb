@@ -15,7 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Rememberable
       t.datetime :remember_created_at
-
+      
       ## Trackable
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Lockable
       # t.integer  :failed_attempts, default: 0,
-        # null: false # Only if lock strategy is :failed_attempts
+      # null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 

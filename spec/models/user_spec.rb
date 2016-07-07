@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
   describe "#admin?" do
     context "when user is a admin" do
-      it "should give back true if user an admin" do
+      it "will return true if user an admin" do
         user = create(:user, role: "admin")
         expect(user.admin?).to eq(true)
       end
