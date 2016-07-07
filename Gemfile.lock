@@ -69,6 +69,9 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    foundation-rails (5.4.3.1)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -206,6 +209,7 @@ DEPENDENCIES
   coveralls
   devise
   factory_girl_rails
+  foundation-rails (= 5.4.3.1)
   jquery-rails
   launchy
   pg (~> 0.15)

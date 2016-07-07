@@ -8,9 +8,11 @@ feature "user sees a list of donuts", %{
   # ACCEPTANCE CRITERIA:
   # Root is Donut#index
   # See Links on Donut names
-  let(:donut) { Donut.create }
+
+  let!(:donut) { create(:donut) }
+
   scenario "sees a list of donuts and a link for a new donut" do
-    visit donuts_path
+    visit root_path
 
     expect(page).to have_content donut.name
     expect(page).to have_link donut.name
@@ -20,14 +22,15 @@ feature "user sees a list of donuts", %{
     expect(page).to have_content "New Donut Form"
   end
 
-  scenario "clicks link and is taken to show page for a given donut" do
-    visit donuts_path
+  scenario "clicks linked donut name and is taken to show page" do
+    visit root_path
 
     click_link donut.name
 
     expect(page).to have_content donut.name
     expect(page).to have_content donut.description
     expect(page).to have_content donut.vendor_name
-    expect(page).to have_content donut.image
+
+    expect(page).to have_css("img#individual-donut")
   end
 end
