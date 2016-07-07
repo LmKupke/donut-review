@@ -276,3 +276,7 @@ Style/UnneededPercentQ:
 
 Metrics/AbcSize:
   Enabled: false
+
+ruby:
+  config_file: ruby-config.yml
+  enabled: true
