@@ -12,38 +12,38 @@ feature "user adds a new donuts", %{
   # [ ] Submitting correct form takes us to donut#show
   # [ ] Submitting incorrect renders the form with errors
   before(:each) do
+    user = create(:user)
+    login_as(user)
     visit root_path
   end
 
   scenario "User see a new donut form with correct inputs" do
     click_link "Add New Donut"
     expect(page).to have_css("input#donut_name")
-    expect(page).to have_css("input#donut_vendor_name")
+    expect(page).to have_css("select#donut_vendor_id")
     expect(page).to have_css("input#donut_image")
     expect(page).to have_css("textarea#donut_description")
-    expect(page).to have_css("input#donut_user_id")
   end
 
   scenario "User fills in new donut form inputs sucessfully!" do
+    vendor = create(:vendor)
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
-    fill_in("Vendor name", with: "best")
+    select(vendor.name, from: "Vendor")
     fill_in("Image", with: "https://goo.gl/dfV24M")
     fill_in("Description", with: "Everyone loves this donut.")
-    fill_in("User", with: 1)
-
     click_button("Create Donut")
 
     expect(page).to have_content("glazed")
   end
 
   scenario "User fills in new donut form inputs incorrectly" do
+    vendor = create(:vendor)
     click_link "Add New Donut"
-    fill_in("Name", with: "glazed")
-    fill_in("Vendor name", with: "")
+    fill_in("Name", with: "")
+    select(vendor.name, from: "Vendor")
     fill_in("Image", with: "")
-    fill_in("Description", with: "Everyone loves this donut.")
-    fill_in("User", with: 1)
+    fill_in("Description", with: "")
     click_button("Create Donut")
 
     expect(page).to have_content("New Donut Form")
