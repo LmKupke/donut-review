@@ -1,11 +1,9 @@
 require 'rails_helper'
-require 'pry'
 
 feature "user deletes donut", %{
   As a authenticated donut creator
   I want to delete a Donut
   So that I can rectify my sins } do
-
   # ACCEPTANCE CRITERIA
   # A User sees the delete button on the show page if they created it
   # Delete button destroys the donuts
