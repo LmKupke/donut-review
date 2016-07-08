@@ -11,7 +11,6 @@ feature "user creates an account", %{
   # [X] Form returns error when required fields are not entered correctly
   # [X] Displays success message when form is submitted correctly
   context "as a prospective user" do
-
     before(:each) do
       visit root_path
       click_link("Sign Up")
