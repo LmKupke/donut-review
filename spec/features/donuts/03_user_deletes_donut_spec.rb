@@ -29,7 +29,7 @@ feature "user deletes donut", %{
       login_as(@not_creator)
       visit root_path
       click_link @donut.name
-      
+
       expect(page).to_not have_button("Delete")
     end
   end
