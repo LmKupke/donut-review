@@ -1,0 +1,36 @@
+$shadow: #ed5aa0;
+
+$title-font-color: #d6dbe0;
+
+.site-title {
+  color: $title-font-color;
+  font-family: "Muli";
+  font-size: 80px;
+  font-weight: 800;
+  position: absolute;
+}
+
+.add-donut-link {
+  font-family: "Helvetica";
+}
+
+.crop {
+  background-image: url("assorted-donuts.jpg");
+  background-repeat: no-repeat;
+  height: 400px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.shadow {
+  left: -3px;
+  position: relative;
+  text-shadow: 1px 1px $shadow,
+              2px 2px $shadow,
+              3px 3px $shadow,
+              4px 4px $shadow,
+              5px 5px $shadow,
+              6px 6px $shadow;
+  top: -3px;
+}
