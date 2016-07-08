@@ -20,6 +20,10 @@ class DonutsController < ApplicationController
     @donut = Donut.find(params[:id])
   end
 
+  def destroy
+    @donut.destroy
+  end
+
   protected
 
   def new_donut_params
