@@ -28,7 +28,6 @@ feature "user adds a new donut", %{
       visit root_path
       click_link "Add New Donut"
     end
-
     scenario "I can successfully add a new donut by navigating to the root path
       and clicking the Add New Donut link" do
 

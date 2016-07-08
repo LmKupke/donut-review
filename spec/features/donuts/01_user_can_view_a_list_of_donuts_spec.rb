@@ -34,8 +34,8 @@ feature "user sees a list of donuts", %{
       expect(page).to have_link "Add New Donut"
     end
 
-    scenario "an authenticated user clicks the name of an individual donut and is
-      taken to that donut's show page" do
+    scenario "an authenticated user clicks the name of an individual donut and
+      is taken to that donut's show page" do
       click_link donut.name
 
       expect(page).to have_content donut.name
