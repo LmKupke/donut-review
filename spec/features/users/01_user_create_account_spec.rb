@@ -19,13 +19,11 @@ feature "user creates an account", %{
 
     scenario "I can visit the root path and click a link to create a new
       account" do
-
       expect(page).to have_css("form#new_user")
     end
 
     scenario "I can click a link to create a new account and is taken to the
       new user form" do
-
       expect(page).to have_css("input#user_first_name")
       expect(page).to have_css("input#user_last_name")
       expect(page).to have_css("input#user_email")
@@ -35,7 +33,6 @@ feature "user creates an account", %{
 
     scenario "I will successfully create an account by filling out the form
       correctly" do
-
       fill_in("First Name", with: "John")
       fill_in("Last Name", with: "Smith")
       fill_in("Email", with: "abc@gmail.com")
@@ -48,7 +45,6 @@ feature "user creates an account", %{
 
     scenario "using an invalid email address to create a new account will
       re-render the page with an error message" do
-
       fill_in("First Name", with: "John")
       fill_in("Last Name", with: "Smith")
       fill_in("Email", with: "abc@gmai")

@@ -29,7 +29,6 @@ feature "user adds a new donut", %{
 
     scenario "I can successfully add a new donut by navigating to the root path
       and clicking the Add New Donut link" do
-
       expect(page).to have_css("input#donut_name")
       expect(page).to have_css("input#donut_vendor_name")
       expect(page).to have_css("input#donut_image")
