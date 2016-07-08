@@ -32,7 +32,6 @@ feature "user sees a list of donuts", %{
 
     scenario "I will be directed to the root and see a list of donuts and a
       link to add a new donut" do
-
       expect(page).to have_content "Glazed"
       expect(page).to have_link "Add New Donut"
     end
