@@ -1,4 +1,5 @@
 class DonutsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :new, :destroy]
   def index
     @donuts = Donut.all
   end
