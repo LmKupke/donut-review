@@ -15,7 +15,7 @@ feature "user signs out", %{
     visit root_path
     click_link("Sign Out")
 
+    expect(page).to have_content("Signed out successfully")
     expect(page).to have_link("Sign In")
-    expect(page).to have_link("Sign Up")
   end
 end

@@ -10,44 +10,40 @@ feature "user signs In", %{
   # [ ] Clicking Sign in shows the sign-in form
   # [ ] Signing in directs us to donuts page
 
-  scenario "An unauthenticated user successfully signs in with valid
-    credentials" do
-    user = create(:user)
+  before(:each) do
     visit root_path
     click_link("Sign In")
-
-    fill_in("Email", with: user.email)
-    fill_in("Password", with: user.password)
-    click_button("Log in")
-
-    expect(page).to have_content("Signed in successfully.")
   end
 
-  scenario "An unauthenticated user enters invalid email and does not
-    successfully sign-in" do
-    user = create(:user)
-    visit root_path
-    click_link("Sign In")
+  context "As an unauthenticated user" do
+    let(:user) { create(:user) }
 
-    fill_in("Email", with: "123gmail.com")
-    fill_in("Password", with: user.password)
+    scenario "I will successfully sign in with valid credentials" do
+      fill_in("Email", with: user.email)
+      fill_in("Password", with: user.password)
 
-    click_button("Log in")
+      click_button("Log in")
 
-    expect(page).to have_content("Invalid Email or password.")
-  end
+      expect(page).to have_content("Signed in successfully.")
+    end
 
-  scenario "An unauthenticated user enters invalid password and does not
-    successfully sign-in" do
-    user = create(:user)
-    visit root_path
-    click_link("Sign In")
+    scenario "I will not successfully sign-in if I enter an invalid email" do
+      fill_in("Email", with: "123gmail.com")
+      fill_in("Password", with: user.password)
 
-    fill_in("Email", with: user.email)
-    fill_in("Password", with: "password")
+      click_button("Log in")
 
-    click_button("Log in")
+      expect(page).to have_content("Invalid Email or password.")
+    end
 
-    expect(page).to have_content("Invalid Email or password.")
+    scenario "I will not successfully sign-in if I enter an invalid
+      password" do
+      fill_in("Email", with: user.email)
+      fill_in("Password", with: "password")
+
+      click_button("Log in")
+
+      expect(page).to have_content("Invalid Email or password.")
+    end
   end
 end
