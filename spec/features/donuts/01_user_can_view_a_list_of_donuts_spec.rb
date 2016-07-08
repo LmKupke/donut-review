@@ -29,7 +29,6 @@ feature "user sees a list of donuts", %{
 
     expect(page).to have_content donut.name
     expect(page).to have_content donut.description
-    expect(page).to have_content donut.vendor_name
 
     expect(page).to have_css("img#individual-donut")
   end

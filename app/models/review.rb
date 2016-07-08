@@ -1,4 +1,7 @@
 class Review < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :donut
+
   validates :user_id, presence: true
   validates :rating, presence: true
   validates :rating, numericality: { only_integer: true }
