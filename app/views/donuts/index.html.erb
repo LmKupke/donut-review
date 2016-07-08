@@ -1,4 +1,8 @@
-<h1>Donut Judge Me</h1>
+<div class="small-12 large-12 medium-12 crop columns">
+  <div class="small-offset-3 large-offset-3 medium-offset-2 columns">
+    <h1 class= "site-title shadow">Donut Judge Me</h1>
+  </div>
+</div>
 
 <% @donuts.each do |donut| %>
   <ul>
@@ -7,6 +11,7 @@
     </li>
   </ul>
 <% end %>
+
 <% if user_signed_in? %>
-  <%= link_to "Add New Donut", new_donut_path %>
+  <%= link_to "Add New Donut", new_donut_path, class: 'add-donut-link' %>
 <% end %>

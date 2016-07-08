@@ -12,14 +12,16 @@ feature "user create account", %{
   # [ ] Displays success message and redirects to user profile when form
   #     is submitted correctly
 
-  scenario 'user sees sign-up form' do
+  scenario "A new user visits the root path and clicks a link to create a new
+    account" do
     visit root_path
     click_link("Sign Up")
 
     expect(page).to have_css("form#new_user")
   end
 
-  scenario 'user sees all inputs form' do
+  scenario "A new user clicks link to create a new account and is taken to the
+    new user form" do
     visit root_path
     click_link("Sign Up")
 
@@ -30,7 +32,8 @@ feature "user create account", %{
     expect(page).to have_css("input#user_password_confirmation")
   end
 
-  scenario "user fills in form correctly" do
+  scenario "A new user is taken to the new user form and successfully creates an
+    account by filling out the form correctly" do
     visit root_path
     click_link("Sign Up")
 
@@ -44,7 +47,8 @@ feature "user create account", %{
     expect(page).to have_content("You have successfully signed up!")
   end
 
-  scenario "user fills in form correctly" do
+  scenario "A new user does not create a new account if he or she fills out the
+    form with an invalid email address" do
     visit root_path
     click_link("Sign Up")
 
