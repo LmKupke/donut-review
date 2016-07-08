@@ -11,52 +11,41 @@ feature "user adds a new donut", %{
   # [X] On donut#new there should be a Form
   # [X] Submitting correct form takes us to donut#show
   # [X] Submitting incorrect renders the form with errors
-
-  context "as an unauthenticated user" do
-    scenario "I will not be able to add a new donut" do
-      visit root_path
-
-      expect(page).to_not have_content("Add New Donut")
-    end
+  before(:each) do
+    user = create(:user)
+    login_as(user)
+    visit root_path
   end
 
-  context "as an authenticated user" do
-    let(:user) { create(:user) }
-    before(:each) do
-      login_as(user)
-      visit new_donut_path
-    end
+  scenario "User see a new donut form with correct inputs" do
+    click_link "Add New Donut"
+    expect(page).to have_css("input#donut_name")
+    expect(page).to have_css("select#donut_vendor_id")
+    expect(page).to have_css("input#donut_image")
+    expect(page).to have_css("textarea#donut_description")
+  end
 
-    scenario "I can successfully add a new donut by navigating to the root path
-      and clicking the Add New Donut link" do
-      expect(page).to have_css("input#donut_name")
-      expect(page).to have_css("input#donut_vendor_name")
-      expect(page).to have_css("input#donut_image")
-      expect(page).to have_css("textarea#donut_description")
-      expect(page).to have_css("input#donut_user_id")
-    end
+  scenario "User fills in new donut form inputs sucessfully!" do
+    vendor = create(:vendor)
+    click_link "Add New Donut"
+    fill_in("Name", with: "glazed")
+    select(vendor.name, from: "Vendor")
+    fill_in("Image", with: "https://goo.gl/dfV24M")
+    fill_in("Description", with: "Everyone loves this donut.")
+    click_button("Create Donut")
 
-    scenario "using valid data to create a donut, I see a success message upon
-      submission" do
-      fill_in("Name", with: "glazed")
-      fill_in("Vendor name", with: "best")
-      fill_in("Image", with: "https://goo.gl/dfV24M")
-      fill_in("Description", with: "Everyone loves this donut.")
-      fill_in("User", with: 1)
+    expect(page).to have_content("glazed")
+  end
 
-      click_button("Create Donut")
+  scenario "User fills in new donut form inputs incorrectly" do
+    vendor = create(:vendor)
+    click_link "Add New Donut"
+    fill_in("Name", with: "")
+    select(vendor.name, from: "Vendor")
+    fill_in("Image", with: "")
+    fill_in("Description", with: "")
+    click_button("Create Donut")
 
-      expect(page).to have_content("glazed")
-    end
-
-    scenario "using invalid values to create a donut, the page re-renders with
-      an error message" do
-      fill_in("Name", with: nil)
-      fill_in("Description", with: "Everyone loves this donut.")
-
-      click_button("Create Donut")
-
-      expect(page).to have_content("New Donut Form")
-    end
+    expect(page).to have_content("New Donut Form")
   end
 end

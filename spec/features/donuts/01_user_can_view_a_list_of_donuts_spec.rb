@@ -18,7 +18,7 @@ feature "user sees a list of donuts", %{
     scenario "I will be directed to the root and see a list of donuts" do
       visit root_path
 
-      expect(page).to have_content "Glazed"
+      expect(page).to have_content donut.name
       expect(page).to_not have_link "Add New Donut"
     end
   end
@@ -32,7 +32,7 @@ feature "user sees a list of donuts", %{
 
     scenario "I will be directed to the root and see a list of donuts and a
       link to add a new donut" do
-      expect(page).to have_content "Glazed"
+      expect(page).to have_content donut.name
       expect(page).to have_link "Add New Donut"
     end
 
@@ -42,7 +42,6 @@ feature "user sees a list of donuts", %{
 
       expect(page).to have_content donut.name
       expect(page).to have_content donut.description
-      expect(page).to have_content donut.vendor_name
       expect(page).to have_css("img#individual-donut")
     end
   end
