@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:street_number) {|n| n }
+  sequence(:street_number) { |n| n }
   factory :vendor do
     name "Donna's Donuts"
     street_number

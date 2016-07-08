@@ -29,7 +29,7 @@ feature "user adds a new donuts", %{
     vendor = create(:vendor)
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
-    select("#{vendor.name}", from: "Vendor")
+    select(vendor.name, from: "Vendor")
     fill_in("Image", with: "https://goo.gl/dfV24M")
     fill_in("Description", with: "Everyone loves this donut.")
     click_button("Create Donut")
@@ -41,7 +41,7 @@ feature "user adds a new donuts", %{
     vendor = create(:vendor)
     click_link "Add New Donut"
     fill_in("Name", with: "")
-    select("#{vendor.name}", from: "Vendor")
+    select(vendor.name, from: "Vendor")
     fill_in("Image", with: "")
     fill_in("Description", with: "")
     click_button("Create Donut")
