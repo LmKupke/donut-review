@@ -15,7 +15,7 @@ feature "user sees a list of donuts", %{
   let!(:donut) { create(:donut) }
 
   context "as an unauthenticated user" do
-    scenario "I will be directed to the root and see a list of donuts" do
+    scenario "I will visit the root and see a list of donuts" do
       visit root_path
 
       expect(page).to have_content donut.name
