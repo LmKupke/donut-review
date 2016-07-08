@@ -6,12 +6,11 @@ feature "user creates an account", %{
   So that I can use the rest of the features.
 } do
   # Acceptance Criteria
-  # [ ] Link to sign up exists in the nav-bar when not logged in
-  # [ ] Sign-up page has a form
-  # [ ] Form returns error when required fields are not entered correctly
-  # [ ] Displays success message and redirects to user profile when form
-  #     is submitted correctly
-  context "as a new user" do
+  # [X] Link to sign up exists in the nav-bar when not logged in
+  # [X] Sign-up page has a form
+  # [X] Form returns error when required fields are not entered correctly
+  # [X] Displays success message when form is submitted correctly
+  context "as a prospective user" do
 
     before(:each) do
       visit root_path
@@ -34,8 +33,8 @@ feature "user creates an account", %{
       expect(page).to have_css("input#user_password_confirmation")
     end
 
-    scenario "I will be taken to the new user form and successfully create an
-      account by filling out the form correctly" do
+    scenario "I will successfully create an account by filling out the form
+      correctly" do
 
       fill_in("First Name", with: "John")
       fill_in("Last Name", with: "Smith")
@@ -47,8 +46,8 @@ feature "user creates an account", %{
       expect(page).to have_content("You have successfully signed up!")
     end
 
-    scenario "I will not be able to create a new account if I fill out the
-      form with an invalid email address" do
+    scenario "using an invalid email address to create a new account will
+      re-render the page with an error message" do
 
       fill_in("First Name", with: "John")
       fill_in("Last Name", with: "Smith")

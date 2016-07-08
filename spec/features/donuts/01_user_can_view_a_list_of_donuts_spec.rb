@@ -6,8 +6,11 @@ feature "user sees a list of donuts", %{
    To look at delicious donuts
   } do
   # ACCEPTANCE CRITERIA:
-  # Root is Donut#index
-  # See Links on Donut names
+  # [X] Root is Donut#index
+  # [X] Unauthenticated user is directed to the Donut#index
+  # [X] Authenticated user can add a new donut
+  # [X] See Links on Donut names
+  # [X] Clicking donut name link redirects to donut's show page
 
   let!(:donut) { create(:donut) }
 
@@ -22,20 +25,20 @@ feature "user sees a list of donuts", %{
 
   context "as an authenticated user" do
     let!(:authenticated_user) { create(:user) }
-
     before(:each) do
       login_as(authenticated_user)
       visit root_path
     end
-    scenario "an authenticated user is directed to root and sees a list of
-      donuts and a link to add a new donut" do
+
+    scenario "I will be directed to the root and see a list of donuts and a
+      link to add a new donut" do
 
       expect(page).to have_content "Glazed"
       expect(page).to have_link "Add New Donut"
     end
 
-    scenario "an authenticated user clicks the name of an individual donut and
-      is taken to that donut's show page" do
+    scenario "I will be directed to the show page of a donut after clicking on
+      its name" do
       click_link donut.name
 
       expect(page).to have_content donut.name

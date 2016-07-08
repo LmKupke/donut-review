@@ -6,9 +6,11 @@ feature "user signs In", %{
   So that I add donut and review the app.
 } do
   # Acceptance Criteria
-  # [ ] Link to sign in exists in the nav-bar
-  # [ ] Clicking Sign in shows the sign-in form
-  # [ ] Signing in directs us to donuts page
+  # [X] Link to sign in exists in the nav-bar
+  # [X] Clicking Sign in shows the sign-in form
+  # [X] Signing in directs us to donuts page
+  # [X] Entering invalid email or password does not allow log in
+  # [X] Entering invalid email or password renders an error message
 
   before(:each) do
     visit root_path

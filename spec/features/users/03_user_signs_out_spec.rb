@@ -6,9 +6,9 @@ feature "user signs out", %{
   So that I can leave the app.
 } do
   # Acceptance Criteria
-  # [ ] Link to sign out exists in the nav-bar when logged in
-  # [ ] Clicking Sign Out show message you have signed out
-  # [ ] Link to Sign In appears after signing out
+  # [X] Link to sign out exists in the nav-bar when logged in
+  # [X] Clicking Sign Out show message you have signed out
+  # [X] Link to Sign In appears after signing out
   scenario "An authenticated user is able to sign out"  do
     user = create(:user)
     login_as(user)

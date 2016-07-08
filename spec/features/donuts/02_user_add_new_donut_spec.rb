@@ -6,11 +6,11 @@ feature "user adds a new donut", %{
    So that a user can add reviews
   } do
   # ACCEPTANCE CRITERIA:
-  # [ X ] Root is Donut#index
-  # [ ] See Add New Donut Link on Root
-  # [ ] On donut#new there should be a Form
-  # [ ] Submitting correct form takes us to donut#show
-  # [ ] Submitting incorrect renders the form with errors
+  # [X] Root is Donut#index
+  # [X] See Add New Donut Link on Root
+  # [X] On donut#new there should be a Form
+  # [X] Submitting correct form takes us to donut#show
+  # [X] Submitting incorrect renders the form with errors
 
   context "as an unauthenticated user" do
     scenario "I will not be able to add a new donut" do
@@ -22,12 +22,11 @@ feature "user adds a new donut", %{
 
   context "as an authenticated user" do
     let(:user) { create(:user) }
-
     before(:each) do
       login_as(user)
-      visit root_path
-      click_link "Add New Donut"
+      visit new_donut_path
     end
+
     scenario "I can successfully add a new donut by navigating to the root path
       and clicking the Add New Donut link" do
 
@@ -38,8 +37,8 @@ feature "user adds a new donut", %{
       expect(page).to have_css("input#donut_user_id")
     end
 
-    scenario "I can successfully add a new donut by filling form with valid
-      inputs" do
+    scenario "using valid data to create a donut, I see a success message upon
+      submission" do
       fill_in("Name", with: "glazed")
       fill_in("Vendor name", with: "best")
       fill_in("Image", with: "https://goo.gl/dfV24M")
@@ -51,17 +50,13 @@ feature "user adds a new donut", %{
       expect(page).to have_content("glazed")
     end
 
-    scenario "I will not be able to add a donut if I submit the new donut form
-      incorrectly. The form will also be re-rendered" do
-      fill_in("Name", with: "glazed")
-      fill_in("Vendor name", with: "")
-      fill_in("Image", with: "")
+    scenario "using invalid values to create a donut, the page re-renders with
+      an error message" do
+      fill_in("Name", with: nil)
       fill_in("Description", with: "Everyone loves this donut.")
-      fill_in("User", with: 1)
 
       click_button("Create Donut")
 
-      expect(page).to_not have_content("Glazed")
       expect(page).to have_content("New Donut Form")
     end
   end
