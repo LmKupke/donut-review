@@ -3,3 +3,7 @@
 <%= image_tag(@donut.image, id: "individual-donut") %>
 
 <h2><%= @donut.description %></h2>
+
+<% if current_user == @donut.user %>
+  <%= button_to("Delete", donut_path(@donut), method: :delete) %>
+<% end %>

@@ -21,6 +21,12 @@ class DonutsController < ApplicationController
     @donut = Donut.find(params[:id])
   end
 
+  def destroy
+    @donut = Donut.find(params[:id])
+    @donut.destroy
+    redirect_to root_path
+  end
+
   protected
 
   def new_donut_params
