@@ -30,14 +30,14 @@ feature "user sees a list of donuts", %{
       visit root_path
     end
 
-    scenario "I will be directed to the root and see a list of donuts and a
-      link to add a new donut" do
+    scenario "I will visit the root and see a list of donuts and a link to add
+      a new donut" do
       expect(page).to have_content donut.name
       expect(page).to have_link "Add New Donut"
     end
 
-    scenario "I will be directed to the show page of a donut after clicking on
-      its name" do
+    scenario "I will visit the show page of a donut after clicking on its
+      name" do
       click_link donut.name
 
       expect(page).to have_content donut.name
