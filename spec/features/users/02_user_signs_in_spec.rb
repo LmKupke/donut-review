@@ -42,7 +42,7 @@ feature "user signs In", %{
     user = create(:user)
     visit root_path
     click_link("Sign In")
-  
+
     fill_in("Email", with: user.email)
     fill_in("Password", with: "password")
 
