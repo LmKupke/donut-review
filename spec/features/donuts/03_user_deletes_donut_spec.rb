@@ -21,6 +21,7 @@ feature "user deletes donut", %{
       visit root_path
       click_link @donut.name
       click_button "Delete"
+
       expect(page).to_not have_link(@donut.name)
     end
 
@@ -28,6 +29,7 @@ feature "user deletes donut", %{
       login_as(@not_creator)
       visit root_path
       click_link @donut.name
+      
       expect(page).to_not have_button("Delete")
     end
   end
