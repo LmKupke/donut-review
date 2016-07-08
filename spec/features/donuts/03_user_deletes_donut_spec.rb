@@ -5,10 +5,11 @@ feature "user deletes donut", %{
   As a authenticated donut creator
   I want to delete a Donut
   So that I can rectify my sins } do
-    # ACCEPTANCE CRITERIA
-    # A User sees the delete button on the show page if they created it
-    # Delete button destroys the donuts
-    # A user doesn't see the delete button if they did not create the donut
+
+  # ACCEPTANCE CRITERIA
+  # A User sees the delete button on the show page if they created it
+  # Delete button destroys the donuts
+  # A user doesn't see the delete button if they did not create the donut
 
   context "user sees donut" do
     before(:each) do
