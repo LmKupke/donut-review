@@ -1,16 +1,16 @@
 require "rails_helper"
 
-feature "user adds a new donuts", %{
+feature "user adds a new donut", %{
    As a user
    I want to be able to add a new donut
    So that a user can add reviews
   } do
   # ACCEPTANCE CRITERIA:
-  # [ X ] Root is Donut#index
-  # [ ] See Add New Donut Link on Root
-  # [ ] On donut#new there should be a Form
-  # [ ] Submitting correct form takes us to donut#show
-  # [ ] Submitting incorrect renders the form with errors
+  # [X] Root is Donut#index
+  # [X] See Add New Donut Link on Root
+  # [X] On donut#new there should be a Form
+  # [X] Submitting correct form takes us to donut#show
+  # [X] Submitting incorrect renders the form with errors
   before(:each) do
     user = create(:user)
     login_as(user)

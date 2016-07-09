@@ -6,31 +6,44 @@ feature "user sees a list of donuts", %{
    To look at delicious donuts
   } do
   # ACCEPTANCE CRITERIA:
-  # Root is Donut#index
-  # See Links on Donut names
+  # [X] Root is Donut#index
+  # [X] Unauthenticated user is directed to the Donut#index
+  # [X] Authenticated user can add a new donut
+  # [X] See Links on Donut names
+  # [X] Clicking donut name link redirects to donut's show page
 
   let!(:donut) { create(:donut) }
   let!(:user) { create(:user) }
 
-  scenario "sees a list of donuts and a link for a new donut" do
-    login_as user
-    visit root_path
-    expect(page).to have_content donut.name
-    expect(page).to have_link donut.name
+  context "as an unauthenticated user" do
+    scenario "I will visit the root and see a list of donuts" do
+      visit root_path
 
-    click_link "Add New Donut"
-
-    expect(page).to have_content "New Donut Form"
+      expect(page).to have_content donut.name
+      expect(page).to_not have_link "Add New Donut"
+    end
   end
 
-  scenario "clicks linked donut name and is taken to show page" do
-    visit root_path
+  context "as an authenticated user" do
+    let!(:authenticated_user) { create(:user) }
+    before(:each) do
+      login_as(authenticated_user)
+      visit root_path
+    end
 
-    click_link donut.name
+    scenario "I will visit the root and see a list of donuts and a link to add
+      a new donut" do
+      expect(page).to have_content donut.name
+      expect(page).to have_link "Add New Donut"
+    end
 
-    expect(page).to have_content donut.name
-    expect(page).to have_content donut.description
+    scenario "I will visit the show page of a donut after clicking on its
+      name" do
+      click_link donut.name
 
-    expect(page).to have_css("img#individual-donut")
+      expect(page).to have_content donut.name
+      expect(page).to have_content donut.description
+      expect(page).to have_css("img#individual-donut")
+    end
   end
 end
