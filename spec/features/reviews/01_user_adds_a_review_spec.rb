@@ -13,17 +13,28 @@ feature "user reviews a donut", %{
   #Reloaded page has new review
   let!(:donut) { create(:donut) }
 
-  context "user visits donut show page" do
-
-    scenario "user is authenticated and submits review" do
+  context "user authenticated" do
+    before(:each) do
       user = create(:user)
       login_as(user)
       visit root_path
       click_link donut.name
-      expect(page).to have_css("form")
     end
 
-    scenario "user is unauthenticated and does not see review form" do
+    scenario "sees review form on donut show page" do
+      expect(page).to have_css('form')
+    end
+
+    scenario "user submits a review" do
+      save_and_open_page
+      find("#review_rating_5").click
+      fill_in(:review_body, with: "great!")
+      click_button "Create Review"
+    end
+  end
+
+  context "user unauthenticated" do
+    scenario "user does not see review form on donut show page" do
       visit root_path
       click_link donut.name
       expect(page).to_not have_css("form")

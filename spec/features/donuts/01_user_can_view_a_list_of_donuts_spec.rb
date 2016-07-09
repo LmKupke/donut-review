@@ -10,10 +10,11 @@ feature "user sees a list of donuts", %{
   # See Links on Donut names
 
   let!(:donut) { create(:donut) }
+  let!(:user) { create(:user) }
 
   scenario "sees a list of donuts and a link for a new donut" do
+    login_as user
     visit root_path
-
     expect(page).to have_content donut.name
     expect(page).to have_link donut.name
 

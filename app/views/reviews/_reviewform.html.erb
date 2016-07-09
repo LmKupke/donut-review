@@ -2,10 +2,16 @@
 
 <%= form_for :review do |f| %>
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <% num = 1 %>
+  <% 5.times do |this| %>
+    <%= f.label :rating, num.to_s %>
+    <%= f.radio_button :rating, num, value: num.to_i, label: num %>
+    <% num += 1 %>
+<% end %>
+  <br>
 
   <%= f.label :body %>
   <%= f.text_field :body %>
 
-  <%= f.submit %>
+  <%= f.submit "Create Review" %>
 <% end %>
