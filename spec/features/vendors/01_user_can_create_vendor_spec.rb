@@ -5,7 +5,6 @@ feature "user sees a vendor form", %{
   I want to have access to a vendor form
   So I can add new vendors and see them
 } do
-
   let!(:vendor) { create(:vendor) }
 
   context 'as an unauthenticated user' do
