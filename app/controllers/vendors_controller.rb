@@ -8,7 +8,7 @@ class VendorsController < ApplicationController
     if @vendor.save
       redirect_to @vendor, notice: "You have successfully created a new vendor!"
     else
-      render :new
+      redirect_to new_vendor_path, notice: "Please try again."
     end
   end
 

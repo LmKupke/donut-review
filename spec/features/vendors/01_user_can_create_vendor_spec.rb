@@ -37,7 +37,7 @@ feature "user sees a vendor form", %{
       click_link 'Add New Vendor'
       expect(page).to have_content('New Vendor Form')
 
-      fill_in('Name', with: 'Union Square Donuts' )
+      fill_in('Name', with: 'Union Square Donuts')
       fill_in('Street number', with: '42')
       fill_in('Street name', with: 'Wallaby Way')
       fill_in('City', with: 'Sydney')
@@ -47,6 +47,18 @@ feature "user sees a vendor form", %{
       click_button('Create Vendor')
       expect(page).to have_content('Union Square Donuts')
       expect(page).to have_content('42 Wallaby Way')
+    end
+
+    scenario 'I add a new vendor incorrectly' do
+      click_link 'Add New Vendor'
+
+      fill_in('Name', with: "")
+      click_button('Create Vendor')
+      expect(page).to have_content('Please try again.')
+
+      fill_in('Zipcode', with: '42')
+      click_button('Create Vendor')
+      expect(page).to have_content('Please try again.')
     end
   end
 end
