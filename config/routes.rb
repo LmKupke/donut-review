@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
-  resources :users, only: [:show, :destroy]
   resources :vendors
+  resources :users, only: [:show, :destroy]
+  resources :donuts, only: [:show] do
+    resources :reviews
+  end
 end
