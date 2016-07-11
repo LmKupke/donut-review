@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   resources :donuts, only: [:show] do
     resources :reviews
   end
-
 end
