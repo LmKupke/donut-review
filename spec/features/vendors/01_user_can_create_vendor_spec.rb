@@ -5,7 +5,7 @@ feature "user sees a vendor form", %{
   I wanna see a form for vendors
   So that I can add a vendor
 } do
-  #ACCEPTANCE CRITERIA:
+  # ACCEPTANCE CRITERIA:
   # [] Vendor#create goes to vendors/new
-  # [] 
+  # []
 end
