@@ -4,7 +4,6 @@ feature "user edits an existing donut", %{
   As an authenticated donut creator
   I want to edit a Donut I added
   So I can correct mistakes I made } do
-
   describe "user sees donut" do
     before(:each) do
       @donut = create(:donut)
