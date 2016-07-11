@@ -8,7 +8,6 @@ feature 'user sees all vendors', %{
   let!(:vendor) { create(:vendor) }
 
   context 'Unuthenticated user' do
-
     scenario 'user visits page without signing in' do
       visit root_path
       expect(page).to have_link('All Vendors')
