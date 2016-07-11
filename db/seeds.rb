@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Vendor.find_or_create_by(name: 'Dunkin',
+  street_number: 630,
+  street_name: "Washington St.",
+  city: "Boston",
+  state: "MA",
+  zipcode: 02111,
+  )

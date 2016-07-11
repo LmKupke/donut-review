@@ -9,6 +9,23 @@ class DonutsController < ApplicationController
     @donut = Donut.new
   end
 
+  def edit
+    @donut = Donut.find(params[:id])
+    @url = edit_donut_path
+    @method = "GET"
+  end
+
+  def update
+    @donut = Donut.find(params[:id])
+
+    if @donut.update_attributes(new_donut_params)
+      flash[:notice] = "Donut successfully updated"
+      redirect_to donut_path(@donut)
+    else
+      render "edit"
+    end
+  end
+
   def create
     @donut = Donut.new(new_donut_params)
     @donut.user = current_user

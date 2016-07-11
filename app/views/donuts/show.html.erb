@@ -6,4 +6,5 @@
 
 <% if current_user == @donut.user %>
   <%= button_to("Delete", donut_path(@donut), method: :delete) %>
+  <%= link_to "Edit", edit_donut_path(@donut) %>
 <% end %>

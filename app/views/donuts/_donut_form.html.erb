@@ -1,0 +1,15 @@
+<%= form_for @donut do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :vendor_id %>:
+  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name %><br />
+
+  <%= f.label :image %>:
+  <%= f.url_field :image %><br />
+
+  <%= f.label :description %>:
+  <%= f.text_area :description %><br />
+
+   <%= f.submit %>
+<% end %>
