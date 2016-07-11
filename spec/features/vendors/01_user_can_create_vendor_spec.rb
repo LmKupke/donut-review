@@ -5,12 +5,6 @@ feature "user sees a vendor form", %{
   I want to have access to a vendor form
   So I can add new vendors and see them
 } do
-  # ACCEPTANCE CRITERIA:
-  # [X] Unauthenticated user does not see new vendor link
-  # [X] Authenticated user does see a new vendor link_to
-  # [X] New vendor link takes user to vendor form
-  # [] New vendor form has necessary fields
-  # [] Create vendor button creates vendor and takes user to Vendor#show
 
   let!(:vendor) { create(:vendor) }
 
@@ -54,11 +48,11 @@ feature "user sees a vendor form", %{
 
       fill_in('Name', with: "")
       click_button('Create Vendor')
-      expect(page).to have_content('Please try again.')
+      expect(page).to have_content('Please try again!')
 
       fill_in('Zipcode', with: '42')
       click_button('Create Vendor')
-      expect(page).to have_content('Please try again.')
+      expect(page).to have_content('Please try again!')
     end
   end
 end
