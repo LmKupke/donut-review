@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def new
     @dount = Donut.find(params[:donut_id])
     @review = Review.new
