@@ -1,13 +1,9 @@
 class ReviewsController < ApplicationController
-  def index
-
-  end
 
   def new
     @dount = Donut.find(params[:donut_id])
     @review = Review.new
   end
-
 
   def create
     @donut = Donut.find(params['donut_id'])
@@ -18,7 +14,7 @@ class ReviewsController < ApplicationController
     if @review.valid?
       @review.save
     else
-      flash[:notice] = "#{@review.errors.full_messages.join(", ")}"
+      flash[:notice] = @review.errors.full_messages.join(", ").to_s
     end
     redirect_to donut_path(@donut)
   end

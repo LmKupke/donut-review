@@ -5,12 +5,12 @@ feature "user reviews a donut", %{
   I would like to add a Review to a Donut
   So that other people know how my donut experience was
   } do
-  #ACCEPTANCE CRITERIA
-  #Authenticated user sees donut review form on donut show page
-  #Unauthenticated user does not see review form
-  #Authenticated user can submit review for donut
-  #Submitting review reloads donut show page
-  #Reloaded page has new review
+  # ACCEPTANCE CRITERIA
+  # Authenticated user sees donut review form on donut show page
+  # Unauthenticated user does not see review form
+  # Authenticated user can submit review for donut
+  # Submitting review reloads donut show page
+  # Reloaded page has new review
   let!(:donut) { create(:donut) }
 
   context "user authenticated" do
