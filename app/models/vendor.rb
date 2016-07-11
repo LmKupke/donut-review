@@ -1,4 +1,5 @@
 class Vendor < ActiveRecord::Base
+  belongs_to :user
   has_many :donuts
   STATES = %w(
     AL AK AS AZ AR CA CO CT DE DC FM FL GA GU HI ID IL IN IA KS KY LA ME MH
@@ -15,6 +16,7 @@ class Vendor < ActiveRecord::Base
   validates :state, presence: true, length: { is: 2 }, inclusion: { in: STATES }
   validates :zipcode, presence: true, length: { is: 5 }
   validates :zipcode, numericality: { only_integer: true, greater_than: -1 }
+  validates :user_id, presence: true
 
   def full_address
     "#{street_number} #{street_name} #{city}, #{state} #{zipcode}"
