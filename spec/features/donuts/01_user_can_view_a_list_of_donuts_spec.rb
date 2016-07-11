@@ -13,6 +13,7 @@ feature "user sees a list of donuts", %{
   # [X] Clicking donut name link redirects to donut's show page
 
   let!(:donut) { create(:donut) }
+  let!(:user) { create(:user) }
 
   context "as an unauthenticated user" do
     scenario "I will visit the root and see a list of donuts" do
