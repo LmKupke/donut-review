@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
   resources :users, only: [:show, :destroy]
+  resources :vendors
 end
