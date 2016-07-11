@@ -4,10 +4,6 @@ feature "user edits an existing donut", %{
   As an authenticated donut creator
   I want to edit a Donut I added
   So I can correct mistakes I made } do
-  # ACCEPTANCE CRITERIA
-  # If a user created a donut, he or she can see an edit button on the show page
-  # Edit button edits the donut
-  # A user does not see an edit button if they did not create the donut
 
   describe "user sees donut" do
     before(:each) do

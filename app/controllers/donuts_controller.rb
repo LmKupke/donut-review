@@ -11,8 +11,6 @@ class DonutsController < ApplicationController
 
   def edit
     @donut = Donut.find(params[:id])
-    @url = edit_donut_path
-    @method = "GET"
   end
 
   def update
@@ -22,7 +20,7 @@ class DonutsController < ApplicationController
       flash[:notice] = "Donut successfully updated"
       redirect_to donut_path(@donut)
     else
-      render "edit"
+      render :edit
     end
   end
 
