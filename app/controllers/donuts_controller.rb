@@ -38,6 +38,8 @@ class DonutsController < ApplicationController
 
   def show
     @donut = Donut.find(params[:id])
+    @reviews = @donut.reviews
+    @review = Review.new
   end
 
   def destroy
