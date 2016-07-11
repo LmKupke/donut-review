@@ -1,0 +1,7 @@
+<h1>Vendors</h1>
+<ul>
+  <% @vendors.each do |vendor| %>
+  <li>
+    <%= vendor.name + " | " + vendor.city + ", " + vendor.state %>
+  </li>
+</ul>
