@@ -1,13 +1,26 @@
 class ReviewsController < ApplicationController
+  def index
+
+  end
+
   def new
     @dount = Donut.find(params[:donut_id])
     @review = Review.new
   end
 
+
   def create
-    @dount = Donut.find(params[:donut_id])
+    @donut = Donut.find(params['donut_id'])
     @review = Review.new(review_params)
+
     @review.donut = @donut
+    @review.user = current_user
+    if @review.valid?
+      @review.save
+    else
+      flash[:notice] = "#{@review.errors.full_messages.join(", ")}"
+    end
+    redirect_to donut_path(@donut)
   end
 
   def edit

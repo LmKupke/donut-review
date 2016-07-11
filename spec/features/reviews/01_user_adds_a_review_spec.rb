@@ -26,10 +26,17 @@ feature "user reviews a donut", %{
     end
 
     scenario "user submits a review" do
-      save_and_open_page
-      find("#review_rating_5").click
+      choose("3")
       fill_in(:review_body, with: "great!")
       click_button "Create Review"
+      expect(page).to have_content("great!")
+    end
+
+    scenario "user submits an invalid review" do
+      fill_in(:review_body, with: "great!")
+      click_button "Create Review"
+
+      expect(page).to_not have_content("great!")
     end
   end
 

@@ -1,13 +1,9 @@
 <h3>Add Review</h3>
 
-<%= form_for :review do |f| %>
+<%= form_for :review, url: donut_reviews_path(@donut) do |f| %>
   <%= f.label :rating %>
-  <% num = 1 %>
-  <% 5.times do |this| %>
-    <%= f.label :rating, num.to_s %>
-    <%= f.radio_button :rating, num, value: num.to_i, label: num %>
-    <% num += 1 %>
-<% end %>
+  <%= f.collection_radio_buttons :rating, [[1, "1"], [2, "2"], [3,"3"], [4,"4"],[5,"5"]], :first, :last %>
+  
   <br>
 
   <%= f.label :body %>

@@ -8,6 +8,12 @@
   <%= button_to("Delete", donut_path(@donut), method: :delete) %>
 <% end %>
 
+<% @reviews.each do |rev| %>
+  <%= rev.user.fullname %>
+  <%= rev.rating %>
+  <%= rev.body %>
+<% end %>
+
 <% if current_user %>
-  <%= render "reviews/reviewform" %>
+  <%= render partial: "reviews/reviewform" %>
 <% end %>

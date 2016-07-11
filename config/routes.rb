@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
   resources :users, only: [:show, :destroy]
-  resources :reviews
+
+  resources :donuts, only: [:show] do
+    resources :reviews
+  end
 end

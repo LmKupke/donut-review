@@ -21,6 +21,10 @@ class DonutsController < ApplicationController
 
   def show
     @donut = Donut.find(params[:id])
+    @reviews = @donut.reviews
+    @url = "donut_reviews_path"
+    @method = "post"
+    @review = Review.new
   end
 
   def destroy
