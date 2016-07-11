@@ -1,7 +1,6 @@
 require "rails_helper"
 
 feature "user reviews a donut" do
-  
   let!(:donut) { create(:donut) }
 
   context "user authenticated" do
