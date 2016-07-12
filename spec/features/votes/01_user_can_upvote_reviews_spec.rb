@@ -1,11 +1,9 @@
 require 'rails_helper'
-
 feature "user upvotes donut ratings", %{
   As a user
   I want to upvote and downvote ratings for a donut
   So I can act like I'm on Reddit
 } do
-
 
   context 'as an unauthenticated user, ' do
     let!(:donut) { create(:donut) }
@@ -23,7 +21,6 @@ feature "user upvotes donut ratings", %{
       expect(page).to have_content('Please sign in before upvoting')
     end
   end
-
 
   context 'as an authenticated user, ' do
     let!(:authenticated_user) { create(:user) }
@@ -64,5 +61,4 @@ feature "user upvotes donut ratings", %{
       expect(page).to have_content('0')
     end
   end
-
 end
