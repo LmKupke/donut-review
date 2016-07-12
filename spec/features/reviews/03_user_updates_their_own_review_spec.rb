@@ -21,7 +21,6 @@ feature "user updates a review" do
   end
 
   scenario "user is not the review creator" do
-    review = create(:review)
     user = create(:user)
     login_as(user)
     visit root_path
