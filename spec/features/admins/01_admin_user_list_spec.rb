@@ -24,11 +24,19 @@ feature "admin sees a list of users", %{
   end
 
   context "as an authenticated user, but not admin" do
-    scenario "user can't see the admin session" do
+    before(:each) do
       user1 = create(:user)
       login_as(user1)
       visit root_path
+    end
+
+    scenario "user can't see the admin session" do
       expect(page).to_not have_link("Admin Section")
+    end
+
+    scenario "user would get a 404 if attempting to go to admin path" do
+      # visit admin_users_path
+      expect { visit admin_users_path }.to raise_error(ActionController::RoutingError)
     end
   end
 end
