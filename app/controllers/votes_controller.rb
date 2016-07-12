@@ -8,12 +8,6 @@ class VotesController < ApplicationController
     @vote = Vote.new(params)
     @vote.review = @review
     @vote.user = current_user
-
-    if @vote.valid?
-      @vote.save
-    else
-      flash[:notice] = @vote.errors.full_messages.join(", ").to_s
-    end
   end
 
   def edit
