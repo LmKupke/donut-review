@@ -12,11 +12,11 @@ feature "user updates a review" do
     fill_in(:review_body, with: "wunderbar")
     click_button "Create Review"
     click_button "Edit"
-    choose("1")
+    choose("2")
     fill_in(:review_body, with: "actually, not so wunderbar")
     click_button "Update Review"
 
-    expect(page).to have_content("1")
+    expect(page).to have_content("2")
     expect(page).to have_content("actually, not so wunderbar")
   end
 
