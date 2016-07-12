@@ -11,7 +11,7 @@
     </li>
   </ul>
 <% end %>
-
+<%= link_to 'All Vendors', vendors_path %>
 <% if user_signed_in? %>
   <%= link_to "Add New Donut", new_donut_path, class: 'add-donut-link' %>
   <%= link_to "Add New Vendor", new_vendor_path %>
