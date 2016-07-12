@@ -14,7 +14,7 @@ feature "email is sent" do
     click_button "Create Review"
 
     email = ActionMailer::Base.deliveries.last
-    expect(email.to.first).to eq("#{donut.user.email}")
+    expect(email.to.first).to eq(donut.user.email)
     expect(email.subject).to eq("New Review for #{donut.name}")
   end
 end
