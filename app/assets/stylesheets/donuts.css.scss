@@ -15,17 +15,23 @@ $turquoise: #13bde1;
 
 .add-donut-link {
   color: $shadow;
+  background-color: $white;
+  border: 2px solid $turquoise;
   font-family: "Righteous";
   font-size: 20px;
   margin: 100px;
+  padding: 10px;
   text-align: center;
 }
 
 .add-vendor-link {
+  background-color: $white;
+  border: 2px solid $turquoise;
   color: $shadow;
   font-family: "Righteous";
   font-size: 20px;
   margin: 100px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -66,18 +72,6 @@ $turquoise: #13bde1;
 
 h1 {
   text-align: center;
-}
-
-.add-donut-link {
-  background-color: $white;
-  border: 2px solid $turquoise;
-  padding: 10px;
-}
-
-.add-vendor-link {
-  background-color: $white;
-  border: 2px solid $turquoise;
-  padding: 10px;
 }
 
 .user-signs {
