@@ -1,6 +1,6 @@
-<h3>Add Review</h3>
+<h3> Edit Review</h3>
 
-<%= form_for :review, url: donut_reviews_path(@donut) do |f| %>
+<%= form_for :review, url: donut_review_path(@donut, @review), method: "patch" do |f| %>
   <%= f.label :rating %>
   <%= f.collection_radio_buttons :rating, [[1, "1"], [2, "2"], [3,"3"], [4,"4"],[5,"5"]], :first, :last %>
 
@@ -9,5 +9,5 @@
   <%= f.label :body %>
   <%= f.text_field :body %>
 
-  <%= f.submit "Create Review" %>
+  <%= f.submit "Update Review" %>
 <% end %>
