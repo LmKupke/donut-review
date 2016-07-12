@@ -9,7 +9,7 @@ feature "admin sees a list of users", %{
     let!(:user1) { create(:user) }
     let!(:user2) { create(:user, first_name: "John", last_name: "Smith") }
     before(:each) do
-      admin = create(:user, role: "admin", first_name: "Boss", last_name: "Beyonce")
+      admin = create(:user, role: "admin", first_name: "Boss", last_name: "Bey")
       login_as(admin)
       visit root_path
       click_link "Admin Section"

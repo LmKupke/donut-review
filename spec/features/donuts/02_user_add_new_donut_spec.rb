@@ -19,6 +19,7 @@ feature "user adds a new donut", %{
 
   scenario "User see a new donut form with correct inputs" do
     click_link "Add New Donut"
+
     expect(page).to have_css("input#donut_name")
     expect(page).to have_css("select#donut_vendor_id")
     expect(page).to have_css("input#donut_image")
