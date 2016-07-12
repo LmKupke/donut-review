@@ -13,6 +13,8 @@
   <%= rev.user.fullname %>
   <%= rev.rating %>
   <%= rev.body %>
+  <%= button_to '+1', upvote_api_review_votes_path(rev), class: "upvote-review", id: "upvote-review-#{rev.id}" %>
+  <%= button_to '-1', downvote_api_review_votes_path(rev), class: "downvote-review", id: "downvote-review-#{rev.id}" %>
   <% if rev.user == current_user %>
     <%= button_to("Delete", donut_review_path(@donut.id, rev.id), method: :delete) %>
     <%= button_to("Edit", edit_donut_review_path(@donut.id, rev.id), method: :get) %>
