@@ -1,3 +1,57 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  background-image: url("http://yesofcorsa.com/wp-content/uploads/2015/08/4065_donuts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  overflow: hidden;
+  padding: 0;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.master-form {
+  border: 3px solid #13BDE1;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  width: 400px;
+
+}
+
+.log-in-links {
+  color: white;
+  font-family: 'Muli';
+  font-size: 15px;
+  font-weight: 200px;
+}
+
+h2 {
+  color: white;
+  font-family: 'Muli';
+  font-size: 20px;
+  font-weight: 200px;
+}
+
+.form-title {
+  text-align: center;
+  color: white;
+  font-family: 'Righteous'
+}
+.form-text {
+  color: white;
+  font-family: 'Muli';
+  font-size: 20px;
+  font-weight: 200px;
+}
+
+.remember-text {
+  color: white;
+  font-family: 'Muli';
+  font-size: 15px;
+  font-weight: 200px;
+}
