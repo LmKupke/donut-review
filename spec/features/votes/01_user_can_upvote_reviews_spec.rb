@@ -7,26 +7,62 @@ feature "user upvotes donut ratings", %{
 } do
 
 
-  context 'as an unauthenticated user' do
+  context 'as an unauthenticated user, ' do
     let!(:donut) { create(:donut) }
+    let!(:review) { create(:review) }
     before(:each) do
       visit root_path
       click_link "Glazed"
     end
-    scenario 'I visit the root path and there is a new vendor button' do
-      save_and_open_page
-    end
+    scenario 'I visit donut review page' do
+      expect(page).to have_content('Upvote')
+      expect(page).to have_content('Downvote')
 
-    scenario 'I add a new vendor correctly' do
+      click_link('Upvote')
 
-    end
-
-    context ' as an authenticated user' do
-      let!(:authenticated_user) { create(:user) }
-      before(:each) do
-        login_as(authenticated_user)
-        visit root_path
-      end
+      expect(page).to have_content('Please sign in before upvoting')
     end
   end
+
+
+  context 'as an authenticated user, ' do
+    let!(:authenticated_user) { create(:user) }
+    before(:each) do
+      login_as(authenticated_user)
+      visit root_path
+      click_link 'Glazed'
+    end
+
+    scenario 'I visit donut review page' do
+      expect(page).to have_content('Upvote')
+      expect(page).to have_content('Downvote')
+    end
+
+    scenario 'I upvote a review' do
+      click_link('Upvote')
+
+      expect(page).to have_content('+1')
+
+      click_link('Upvote')
+      expect(page).to have_content('+1')
+    end
+
+    scenario 'I downvote a review' do
+      click_link('Downvote')
+
+      expect(page).to have_content('-1')
+
+      click_link('Downvote')
+
+      expect(page).to have_content('-1')
+    end
+
+    scenario 'I upvote and downvote a review' do
+      click_link('Upvote')
+      click_link('Downvote')
+
+      expect(page).to have_content('0')
+    end
+  end
+
 end
