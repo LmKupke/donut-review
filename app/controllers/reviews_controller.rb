@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.valid?
       @review.save
+      ReviewMailer.new_review(@review).deliver_later
     else
       flash[:notice] = @review.errors.full_messages.join(", ").to_s
     end

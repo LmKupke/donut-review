@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
 
+
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '4.0.5'
@@ -20,6 +21,7 @@ end
 group :test do
   gem 'launchy', require: false
   gem 'coveralls', require: false
+  gem "shoulda-matchers"
 end
 
 group :production do
