@@ -3,7 +3,6 @@ class Api::VotesController < ApiController
   before_action :pre_vote
 
   def upvote
-    binding.pry
     if @value.vote == 1
       @value.vote -= 1
     else

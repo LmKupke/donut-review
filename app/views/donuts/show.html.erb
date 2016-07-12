@@ -13,6 +13,7 @@
   <%= rev.user.fullname %>
   <%= rev.rating %>
   <%= rev.body %>
+  <span id="review-sum-<%= rev.id %>"> <%= rev.votes.sum(:vote) %></span>
   <%= button_to '+1', upvote_api_review_votes_path(rev), class: "upvote-review", id: "upvote-review-#{rev.id}" %>
   <%= button_to '-1', downvote_api_review_votes_path(rev), class: "downvote-review", id: "downvote-review-#{rev.id}" %>
   <% if rev.user == current_user %>
