@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
+  namespace :admin do
+    resources :donuts, only: [:index, :destroy]
+    resources :users, only: [:index, :show, :destroy]
+  end
   resources :vendors
   resources :users, only: [:show, :destroy]
   resources :donuts, only: [:show] do
