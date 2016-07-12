@@ -1,0 +1,29 @@
+<h2>Admin Section</h2>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th></th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.fullname %></td>
+      <% if user == current_user %>
+        <td></td>
+      <% else %>
+        <td><%= button_to 'Delete', admin_user_path(user.id), id: "delete-#{user.fullname}", method: :delete %></td>
+      <% end %>
+    </tr>
+  <% end %>
+
+  <tr>
+    <th>Donuts</th>
+    <th></th>
+  </tr>
+  <% @donuts.each do |donut| %>
+      <tr>
+        <td><%= donut.name %></td>
+        <td><%= button_to "Delete", admin_donut_path(donut.id), method: :delete %></td>
+      </tr>
+  <% end %>
+</table>
