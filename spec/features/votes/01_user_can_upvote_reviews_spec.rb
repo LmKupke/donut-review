@@ -4,7 +4,6 @@ feature "user upvotes donut ratings", %{
   I want to upvote and downvote ratings for a donut
   So I can act like I'm on Reddit
 } do
-
   context 'as an unauthenticated user, ' do
     let!(:donut) { create(:donut) }
     let!(:review) { create(:review) }
