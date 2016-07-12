@@ -1,32 +1,32 @@
 $shadow: #ed5aa0;
-
+$white: #ffffff;
 $title-font-color: #d6dbe0;
+$turquoise: #13bde1;
 
 .site-title {
   color: $title-font-color;
   font-family: "Muli";
   font-size: 80px;
   font-weight: 800;
-  max-width: 1000px;
   margin: auto;
+  max-width: 1000px;
   text-align: center;
 }
 
 .add-donut-link {
-  font-family: "Righteous";
   color: $shadow;
-  text-align: center;
+  font-family: "Righteous";
   font-size: 20px;
   margin: 100px;
-
+  text-align: center;
 }
 
 .add-vendor-link {
-  font-family: "Righteous";
   color: $shadow;
-  text-align: center;
+  font-family: "Righteous";
   font-size: 20px;
   margin: 100px;
+  text-align: center;
 }
 
 .crop {
@@ -34,10 +34,10 @@ $title-font-color: #d6dbe0;
   background-repeat: no-repeat;
   background-size: cover;
   height: 520px;
+  margin-bottom: 30px;
+  max-width: 100%;
   overflow: hidden;
   padding: 0;
-  max-width: 100%;
-  margin-bottom: 30px;
 }
 
 .shadow {
@@ -57,11 +57,11 @@ $title-font-color: #d6dbe0;
 }
 
 .donut-list {
-  list-style-type: none;
-  font-size: 25px;
-  text-align: center;
-  margin-top: 25px;
   font-family: "Muli";
+  font-size: 25px;
+  list-style-type: none;
+  margin-top: 25px;
+  text-align: center;
 }
 
 h1 {
@@ -69,29 +69,27 @@ h1 {
 }
 
 .add-donut-link {
-  background-color: white;
+  background-color: $white;
+  border: 2px solid $turquoise;
   padding: 10px;
-  border: 2px solid #13bde1;
 }
 
 .add-vendor-link {
-  background-color: white;
+  background-color: $white;
+  border: 2px solid $turquoise;
   padding: 10px;
-  border: 2px solid #13bde1;
 }
 
 .user-signs {
-  background-color: white;
-  padding: 10px;
-  border: 2px solid #13bde1;
-  font-family: "Righteous";
+  background-color: $white;
+  border: 2px solid $turquoise;
   color: $shadow;
-
+  font-family: "Righteous";
+  padding: 10px;
 }
 
 .sign-links {
   margin: 10px;
-
 }
 
 .top-bar {
