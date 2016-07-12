@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :donut
+  has_many :votes
 
   validates :user_id, presence: true
   validates :rating, presence: true

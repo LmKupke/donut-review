@@ -13,6 +13,10 @@
   <%= rev.user.fullname %>
   <%= rev.rating %>
   <%= rev.body %>
+  <% if rev.user == current_user %>
+    <%= button_to("Delete", donut_review_path(@donut.id, rev.id), method: :delete) %>
+    <%= button_to("Edit", edit_donut_review_path(@donut.id, rev.id), method: :get) %>
+  <% end %>
 <% end %>
 
 <% if current_user %>

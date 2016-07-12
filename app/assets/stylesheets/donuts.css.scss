@@ -1,26 +1,49 @@
 $shadow: #ed5aa0;
-
+$white: #ffffff;
 $title-font-color: #d6dbe0;
+$turquoise: #13bde1;
 
 .site-title {
   color: $title-font-color;
   font-family: "Muli";
   font-size: 80px;
   font-weight: 800;
-  position: absolute;
+  margin: auto;
+  max-width: 1000px;
+  text-align: center;
 }
 
 .add-donut-link {
-  font-family: "Helvetica";
+  background-color: $white;
+  border: 2px solid $turquoise;
+  color: $shadow;
+  font-family: "Righteous";
+  font-size: 20px;
+  margin: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+.add-vendor-link {
+  background-color: $white;
+  border: 2px solid $turquoise;
+  color: $shadow;
+  font-family: "Righteous";
+  font-size: 20px;
+  margin: 100px;
+  padding: 10px;
+  text-align: center;
 }
 
 .crop {
   background-image: url("assorted-donuts.jpg");
   background-repeat: no-repeat;
-  height: 400px;
+  background-size: cover;
+  height: 520px;
+  margin-bottom: 30px;
+  max-width: 100%;
   overflow: hidden;
   padding: 0;
-  width: 100%;
 }
 
 .shadow {
@@ -33,4 +56,36 @@ $title-font-color: #d6dbe0;
               5px 5px $shadow,
               6px 6px $shadow;
   top: -3px;
+}
+
+.add-new-links {
+  text-align: center;
+}
+
+.donut-list {
+  font-family: "Muli";
+  font-size: 25px;
+  list-style-type: none;
+  margin-top: 25px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.user-signs {
+  background-color: $white;
+  border: 2px solid $turquoise;
+  color: $shadow;
+  font-family: "Righteous";
+  padding: 10px;
+}
+
+.sign-links {
+  margin: 10px;
+}
+
+.top-bar {
+  margin: 5px;
 }

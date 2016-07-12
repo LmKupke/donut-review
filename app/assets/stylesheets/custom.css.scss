@@ -9,14 +9,16 @@ body {
 
 .top-bar,
 .sticky {
-  background-color: $white;
+  background-color: $body-color;
 }
 
 .top-bar {
+  height: 60px;
   margin: 0;
   width: 100%;
 
-  a {
-    font: "Imprima";
+  .sign-links {
+    font-family: "Righteous";
+    margin: 10px;
   }
 }
