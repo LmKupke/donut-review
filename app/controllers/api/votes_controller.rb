@@ -25,10 +25,13 @@ class Api::VotesController < ApiController
     render json: @vote_total[@review.id]
   end
 
+  def index
+    render json: @review.votes
+  end
+
   protected
 
   def pre_vote
-    binding.pry
     @review = Review.find(params[:review_id])
     @value = Vote.find_or_initialize_by(review: @review, user: current_user)
   end
