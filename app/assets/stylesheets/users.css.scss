@@ -1,3 +1,61 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$white: #ffffff;
+$form-background: rgba(0, 0, 0, 0.5);
+$turquoise: #13bde1;
+
+.wrapper {
+  background-image: url("pink_sprinkles.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  margin: auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.master-form {
+  background-color: $form-background;
+  border: 3px solid $turquoise;
+  color: $white;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  width: 400px;
+}
+
+.log-in-links {
+  color: $white;
+  font-family: "Muli";
+  font-size: 15px;
+  font-weight: 200px;
+}
+
+h2 {
+  color: $white;
+  font-family: "Muli";
+  font-size: 20px;
+  font-weight: 200px;
+}
+
+.form-title {
+  color: $white;
+  font-family: "Righteous";
+  text-align: center;
+}
+
+.form-text {
+  color: $white;
+  font-family: "Muli";
+  font-size: 20px;
+  font-weight: 200px;
+}
+
+.remember-text {
+  color: $white;
+  font-family: "Muli";
+  font-size: 15px;
+  font-weight: 200px;
+}
