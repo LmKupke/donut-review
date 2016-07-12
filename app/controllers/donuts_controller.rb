@@ -9,6 +9,16 @@ class DonutsController < ApplicationController
     @donut = Donut.new
   end
 
+  def create
+    @donut = Donut.new(new_donut_params)
+    @donut.user = current_user
+    if @donut.save
+      redirect_to @donut, notice: "You have successfully added a new donut!"
+    else
+      render :new
+    end
+  end
+
   def edit
     @donut = Donut.find(params[:id])
   end
@@ -21,16 +31,6 @@ class DonutsController < ApplicationController
       redirect_to donut_path(@donut)
     else
       render :edit
-    end
-  end
-
-  def create
-    @donut = Donut.new(new_donut_params)
-    @donut.user = current_user
-    if @donut.save
-      redirect_to @donut, notice: "You have successfully added a new donut!"
-    else
-      render :new
     end
   end
 
