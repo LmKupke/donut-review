@@ -20,7 +20,6 @@ $(function(){ $(document).foundation();
     event.preventDefault();
     var id = this.id.replace('upvote-review-', '');
     var path = '/api/reviews/' + id + '/votes/upvote.json';
-    console.log(path);
     var request = $.ajax({
       url: path,
       method: "POST",
@@ -36,7 +35,6 @@ $(function(){ $(document).foundation();
     event.preventDefault();
     var id = this.id.replace('downvote-review-', '');
     var path = '/api/reviews/' + id + '/votes/downvote.json';
-    console.log(path);
     var request = $.ajax({
       url: path,
       method: "POST",
