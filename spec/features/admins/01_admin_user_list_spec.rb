@@ -35,8 +35,8 @@ feature "admin sees a list of users", %{
     end
 
     scenario "user would get a 404 if attempting to go to admin path" do
-      # visit admin_users_path
-      expect { visit admin_users_path }.to raise_error(ActionController::RoutingError)
+      expect { visit admin_users_path }.to raise_error(
+      ActionController::RoutingError)
     end
   end
 end

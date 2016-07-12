@@ -9,7 +9,7 @@ class Admin::UsersController < ApplicationController
   protected
 
   def authorize_user
-    if !current_user.admin?
+    unless current_user.admin?
       raise ActionController::RoutingError.new("Not Found")
     end
   end
