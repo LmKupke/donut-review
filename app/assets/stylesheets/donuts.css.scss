@@ -3,6 +3,8 @@ $white: #ffffff;
 $title-font-color: #d6dbe0;
 $turquoise: #13bde1;
 $form-background: rgba(0, 0, 0, 0.5);
+$black: #000000;
+$pink: #fac8e2;
 
 .site-title {
   color: $title-font-color;
@@ -115,16 +117,16 @@ h1 {
 }
 
 .donut-title {
-  color: black;
+  color: $black;
   font-family: "Righteous";
   margin: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-left: 40px;
   text-align: left;
 }
 
 .donut-image {
-  border: 2px solid black;
+  border: 2px solid $black;
   border-radius: 20px;
   height: 400px;
 }
@@ -136,29 +138,22 @@ h1 {
 }
 
 .uploaded-donut-content {
-  background-color: #FAC8E2;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
+  background-color: $pink;
+  border-bottom: 2px solid $black;
+  border-top: 2px solid $black;
   margin: 30px;
   text-align: center;
 }
 
 .individual-reviews {
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
+  border-bottom: 2px solid $black;
+  border-top: 2px solid $black;
   margin: 30px;
 }
 
-.fullname {
-  text-size: 50px;
-}
-
 .donut-image-index {
-  height: 100px;
-  width: 100px;
   border: 2px solid $shadow;
   border-radius: 10px;
-}
-
-.donut-tiles {
+  height: 100px;
+  width: 100px;
 }

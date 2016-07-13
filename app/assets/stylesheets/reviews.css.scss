@@ -3,18 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $form-background: rgba(0, 0, 0, 0.2);
-
+$black: #000000;
 
 .row {
   margin: 10px;
 }
 
 .add-review-form {
+  background-color: $form-background;
+  border: 2px solid $black;
   margin: 50px;
   margin-top: 10px;
   width: 400px;
-  background-color: $form-background;
-  border: 2px solid black;
   padding: 10px;
 }
 
