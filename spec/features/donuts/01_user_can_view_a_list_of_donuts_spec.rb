@@ -47,11 +47,13 @@ feature "user sees a list of donuts", %{
     end
   end
 
-  context 'many donuts exist' do
+  context 'enough donuts exist to cause pagination' do
+    
     scenario "see another donut on page two of index" do
       create_list(:donut, 11)
       visit root_path
       click_link "2"
+
       expect(page).to have_link("Glazed")
     end
   end

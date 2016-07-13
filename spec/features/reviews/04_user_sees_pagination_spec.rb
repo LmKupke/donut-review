@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'reviews are paginated' do
+feature 'reviews are paginated after 10 per page' do
   let!(:donut) { create(:donut) }
-  context 'many reviews exist' do
-    scenario "see another review on page two of index" do
+  context 'enough reviews exist to cause pagination' do
+    scenario "eleventh review appears on page two of index" do
       create_list(:review, 11, donut: donut)
       visit root_path
       click_link "Glazed"
