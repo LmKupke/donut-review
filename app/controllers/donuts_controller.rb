@@ -2,7 +2,8 @@ class DonutsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @donuts = Donut.all
+    # @donuts = Donut.all
+    @donuts = Donut.page(params[:page]).per(10)
   end
 
   def new

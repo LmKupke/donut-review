@@ -46,4 +46,12 @@ feature "user sees a list of donuts", %{
       expect(page).to have_css("img#individual-donut")
     end
   end
+
+  context 'many donuts exist' do
+    scenario "see another donut on page two of index" do
+      create_list(:donut, 11)
+      visit root_path
+      save_and_open_page
+    end
+  end  
 end
