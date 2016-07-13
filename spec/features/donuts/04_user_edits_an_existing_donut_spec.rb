@@ -16,7 +16,7 @@ feature "user edits an existing donut", %{
         login_as(@creator)
         visit root_path
         click_link @donut.name
-        click_link "Edit"
+        click_button "Edit"
 
         expect(page).to have_css("input#donut_name")
         expect(page).to have_css("select#donut_vendor_id")
@@ -28,7 +28,7 @@ feature "user edits an existing donut", %{
         login_as(@creator)
         visit root_path
         click_link @donut.name
-        click_link "Edit"
+        click_button "Edit"
         fill_in("Name", with: "New Name")
         fill_in("Description", with: "A most interesting description")
         click_button("Update Donut")
@@ -42,7 +42,7 @@ feature "user edits an existing donut", %{
         login_as(@creator)
         visit root_path
         click_link @donut.name
-        click_link "Edit"
+        click_button "Edit"
         fill_in("Name", with: "")
         fill_in("Description", with: "")
 
