@@ -15,6 +15,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem "capybara-webkit"
 end
 
 group :test do
