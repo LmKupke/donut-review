@@ -10,9 +10,9 @@ feature 'user sees all vendors', %{
   context 'Unuthenticated user' do
     scenario 'user visits page without signing in' do
       visit root_path
-      expect(page).to have_link('All Vendors')
 
       click_link('All Vendors')
+
       expect(page).to have_content('Vendors')
       expect(page).to have_link("Donna's Donuts")
       expect(page).to have_content("Boston, MA")
@@ -33,6 +33,16 @@ feature 'user sees all vendors', %{
       expect(page).to have_content('Vendors')
       expect(page).to have_link("Donna's Donuts")
       expect(page).to have_content("Boston, MA")
+    end
+
+    scenario "see eleventh donut on page two of index" do
+      create_list(:vendor, 11)
+
+      visit root_path
+      click_link('All Vendors')
+      click_link "2"
+
+      expect(page).to have_link("Donna's Donuts")
     end
   end
 end

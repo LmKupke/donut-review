@@ -1,4 +1,5 @@
 class Donut < ActiveRecord::Base
+  paginates_per 10
   has_many :reviews
   belongs_to :vendor
   belongs_to :user

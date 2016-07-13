@@ -2,7 +2,7 @@ class VendorsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.page(params[:page]).per(10)
   end
 
   def new
