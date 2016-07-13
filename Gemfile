@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails', '5.4.3.1'
+gem 'kaminari'
 
 group :development, :test do
   gem 'capybara'
@@ -27,3 +28,4 @@ end
 group :production do
   gem 'rails_12factor'
 end
+ruby '2.2.3'
