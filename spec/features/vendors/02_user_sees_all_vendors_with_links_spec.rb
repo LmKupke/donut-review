@@ -11,8 +11,6 @@ feature 'user sees all vendors', %{
     scenario 'user visits page without signing in' do
       visit root_path
 
-      expect(page).to have_link('All Vendors')
-
       click_link('All Vendors')
 
       expect(page).to have_content('Vendors')
@@ -39,6 +37,7 @@ feature 'user sees all vendors', %{
 
     scenario "see eleventh donut on page two of index" do
       create_list(:vendor, 11)
+
       visit root_path
       click_link('All Vendors')
       click_link "2"
