@@ -1,10 +1,10 @@
 <div class="uploaded-donut-content">
   <h1 class="donut-title"><%= @donut.name %></h1>
   <%= image_tag(@donut.image, id: "individual-donut", class: "donut-image")%>
-  <h3 class = "donut-description"><%= @donut.description %></h3>
+  <h3 class="donut-description"><%= @donut.description %></h3>
 
   <% if current_user == @donut.user %>
-    <ul class = "button-group radius">
+    <ul class="button-group radius">
       <li><%= button_to("Delete", donut_path(@donut), method: :delete,
         class: "button radius tiny button secondary") %></li>
       <li><%= button_to("Edit", edit_donut_path(@donut), method: :get,
@@ -29,7 +29,7 @@
         </div>
 
         <% if rev.user == current_user %>
-        <ul class = "button-group radius">
+        <ul class="button-group radius">
           <li><%= button_to("Delete", donut_review_path(@donut.id, rev.id),
             method: :delete, class: "button radius tiny button secondary") %></li>
           <li><%= button_to("Edit", edit_donut_review_path(@donut.id, rev.id),
