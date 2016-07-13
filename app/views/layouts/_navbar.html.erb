@@ -1,14 +1,27 @@
 
   <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <div clas="row">
+      <div class="small-9 columns sign-nav">
+        <% if user_signed_in? %>
+          <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
+          <% if current_user.admin? %>
+            <%= link_to("Admin Section", admin_users_path) %>
+          <% end %>
+        <% else %>
+          <%= link_to("Sign Up", new_user_registration_path) %>
+          <%= link_to("Sign In", new_user_session_path) %>
+        <% end %>
+      </div>
 
-    <% if user_signed_in? %>
-      <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
-      <% if current_user.admin? %>
-        <%= link_to("Admin Section", admin_users_path) %>
-      <% end %>
-    <% else %>
-      <%= link_to("Sign Up", new_user_registration_path) %>
-      <%= link_to("Sign In", new_user_session_path) %>
-    <% end %>
-
+    <div class="small-3 columns sign-nav">
+        <div class="small-3 columns" id="help">
+          <%= submit_tag "Search", class: "search-button button tiny"%>
+        </div>
+        <div class="small-8 columns" id="searchbuttonform">
+          <%= form_tag donuts_path, method: :get do %>
+          <%= text_field_tag :query %>
+          <% end %>
+        </div>
+    </div>
+    </div>
   </nav>

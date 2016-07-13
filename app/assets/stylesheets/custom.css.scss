@@ -22,3 +22,13 @@ body {
     margin: 10px;
   }
 }
+
+input.search-button.button.tiny {
+  position: absolute;
+}
+input#query {
+  height: 1.8rem;
+}
+div#searchbuttonform {
+  padding-left: 0px;
+}

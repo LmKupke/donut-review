@@ -3,6 +3,8 @@ class DonutsController < ApplicationController
 
   def index
     @donuts = Donut.all
+    @donuts = Donut.global_search(params[:query])
+    @donut = Donut.new
   end
 
   def new

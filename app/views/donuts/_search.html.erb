@@ -1,0 +1,12 @@
+<div class="medium-3 columns">
+  <div clas="row">
+    <div class="small-3 columns">
+      <%= submit_tag "Search" %>
+    </div>
+    <div class="small-9 columns">
+      <%= form_tag donuts_path, method: :get do %>
+      <%= text_field_tag :query %>
+      <% end %>
+    </div>
+  </div>
+</div>

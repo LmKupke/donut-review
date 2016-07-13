@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails', '5.4.3.1'
+gem 'pg_search'
 
 group :development, :test do
   gem 'capybara'

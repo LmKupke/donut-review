@@ -1,4 +1,6 @@
 class Vendor < ActiveRecord::Base
+  include PgSearch
+  
   belongs_to :user
   has_many :donuts
   STATES = %w(
@@ -17,6 +19,9 @@ class Vendor < ActiveRecord::Base
   validates :zipcode, presence: true, length: { is: 5 }
   validates :zipcode, numericality: { only_integer: true, greater_than: -1 }
   validates :user_id, presence: true
+
+  multisearchable against: [:name]
+
 
   def full_address
     "#{street_number} #{street_name} #{city}, #{state} #{zipcode}"
