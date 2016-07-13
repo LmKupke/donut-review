@@ -13,5 +13,4 @@ class Review < ActiveRecord::Base
   validates :body, length: { maximum: 140 }
 
   multisearchable against: [:body]
-
 end

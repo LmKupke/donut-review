@@ -17,7 +17,7 @@
         <div class="small-3 columns" id="help">
           <%= submit_tag "Search", class: "search-button button tiny"%>
         </div>
-        <div class="small-8 columns" id="searchbuttonform">
+        <div class="small-8 columns searchbuttonform">
           <%= form_tag donuts_path, method: :get do %>
           <%= text_field_tag :query %>
           <% end %>

@@ -17,9 +17,10 @@ class Donut < ActiveRecord::Base
     against: [:name, :description],
     associated_against: {
       reviews: [:body]
-      }
+    }
 
-  scope :global_search, -> (query) {
+  scope :global_search, lambda { |query|
     search_donut_and_reviews_and_vendors(query) if query.present?
   }
+
 end
