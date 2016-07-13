@@ -1,24 +1,48 @@
-<h1><%= @donut.name %></h1>
+<div class="uploaded-donut-content">
+  <h1 class="donut-title"><%= @donut.name %></h1>
+  <%= image_tag(@donut.image, id: "individual-donut", class: "donut-image")%>
+  <h3 class = "donut-description"><%= @donut.description %></h3>
 
-<%= image_tag(@donut.image, id: "individual-donut") %>
-
-<h2><%= @donut.description %></h2>
-
-<% if current_user == @donut.user %>
-  <%= button_to("Delete", donut_path(@donut), method: :delete) %>
-  <%= link_to "Edit", edit_donut_path(@donut) %>
-<% end %>
-
-<% @reviews.each do |rev| %>
-  <%= rev.user.fullname %>
-  <%= rev.rating %>
-  <%= rev.body %>
-  <% if rev.user == current_user %>
-    <%= button_to("Delete", donut_review_path(@donut.id, rev.id), method: :delete) %>
-    <%= button_to("Edit", edit_donut_review_path(@donut.id, rev.id), method: :get) %>
+  <% if current_user == @donut.user %>
+    <ul class = "button-group radius">
+      <li><%= button_to("Delete", donut_path(@donut), method: :delete,
+        class: "button radius tiny button secondary") %></li>
+      <li><%= button_to("Edit", edit_donut_path(@donut), method: :get,
+        class: "button radius tiny button secondary") %></li>
+    </ul>
   <% end %>
-<% end %>
+</div>
 
-<% if current_user %>
-  <%= render partial: "reviews/reviewform" %>
-<% end %>
+<div class="row">
+  <div class="small-8 medium-8 large-8 columns reviews">
+    <h3> All Reviews</h3>
+      <div class="individual-reviews">
+      <% @reviews.each do |rev| %>
+        <div class="review-username">
+          <%= rev.user.fullname%> </br>
+        </div>
+        <div class="review-parts">
+            <%= "Rating:" %>
+          <%=rev.rating %> </br>
+            <%= "Comments:" %>
+          <%= rev.body %> </br>
+        </div>
+
+        <% if rev.user == current_user %>
+        <ul class = "button-group radius">
+          <li><%= button_to("Delete", donut_review_path(@donut.id, rev.id),
+            method: :delete, class: "button radius tiny button secondary") %></li>
+          <li><%= button_to("Edit", edit_donut_review_path(@donut.id, rev.id),
+            method: :get, class: "button radius tiny button secondary") %></li>
+        </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-4 medium-4 large-4 columns">
+    <% if current_user %>
+      <%= render partial: "reviews/reviewform" %>
+    <% end %>
+  </div>
+</div>
