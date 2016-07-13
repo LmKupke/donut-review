@@ -1,3 +1,31 @@
 // Place all the styles related to the vendors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$shadow: #ed5aa0;
+$white: #ffffff;
+$title-font-color: #d6dbe0;
+$turquoise: #13bde1;
+$form-background: rgba(0, 0, 0, 0.5);
+
+.new-vendor-form-page {
+  background-image: url("slack-imgs.com.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  margin: auto;
+  margin-bottom: 30px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.new-vendor-form {
+  background-color: $form-background;
+  border: 3px solid $turquoise;
+  color: $white;
+  font-family: "Righteous";
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  width: 400px;
+}

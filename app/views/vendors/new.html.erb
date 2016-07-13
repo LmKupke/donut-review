@@ -1,23 +1,27 @@
-<h1> New Vendor Form </h1>
+<div class="new-vendor-form-page">
+  <div class="new-vendor-form">
+    <h1 class="form-title"> New Vendor Form </h1>
 
-<%= form_for @vendor do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br />
+    <%= form_for @vendor do |f| %>
+      <%= f.label :name, class: 'form-text' %>
+      <%= f.text_field :name %>
 
-  <%= f.label :street_number %>:
-  <%= f.text_area :street_number %><br />
+      <%= f.label :street_number, class: 'form-text' %>
+      <%= f.text_area :street_number %>
 
-  <%= f.label :street_name %>:
-  <%= f.text_area :street_name %><br />
+      <%= f.label :street_name, class: 'form-text' %>
+      <%= f.text_area :street_name %>
 
-  <%= f.label :city %>:
-  <%= f.text_area :city %><br />
+      <%= f.label :city, class: 'form-text' %>
+      <%= f.text_area :city %>
 
-  <%= f.label :state %>
-  <%= f.select :state, Vendor::STATES, { include_blank: false } %>
+      <%= f.label :state, class: 'form-text' %>
+      <%= f.select :state, Vendor::STATES, { include_blank: false } %>
 
-  <%= f.label :zipcode %>:
-  <%= f.text_area :zipcode %><br />
+      <%= f.label :zipcode, class: 'form-text' %>
+      <%= f.text_area :zipcode %>
 
-   <%= f.submit %>
-<% end %>
+       <%= f.submit class: 'button radius'%>
+    <% end %>
+  </div>
+</div>
