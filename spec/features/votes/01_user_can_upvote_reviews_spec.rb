@@ -27,24 +27,24 @@ feature "user upvotes donut ratings", %{
       click_link 'Glazed'
     end
 
-    scenario 'I visit donut review page' do
+    scenario 'I visit donut review page and each review has buttons' do
       expect(page).to have_button('+1')
       expect(page).to have_button('-1')
     end
 
-    scenario 'I upvote a review' do
+    scenario 'I upvote a review and the vote count updates without reload' do
       click_button('+1')
 
       expect(page).to have_content('1')
     end
 
-    scenario 'I downvote a review' do
+    scenario 'I downvote a review and the vote count updates without reload' do
       click_button('-1')
 
       expect(page).to have_content('-1')
     end
 
-    scenario 'I upvote and downvote a review', js: true do
+    scenario 'I upvote & dwnvote & the vote cnt updates w/o reload', js: true do
       click_button('+1')
       click_button('-1')
 
