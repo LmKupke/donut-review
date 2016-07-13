@@ -16,11 +16,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'capybara-webkit', '1.11.1'
 end
 
 group :test do
   gem 'launchy', require: false
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :production do
