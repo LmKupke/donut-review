@@ -1,15 +1,18 @@
   <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <div class="sign-links">
-      <% if user_signed_in? %>
-        <%= link_to("Sign Out", destroy_user_session_path, method: :delete,
-          class: 'user-signs') %>
-        <% if current_user.admin? %>
-          <%= link_to("Admin Section", admin_users_path, class: 'user-signs') %>
-        <% end %>
-      <% else %>
-        <%= link_to("Sign Up", new_user_registration_path,
-          class: 'user-signs') %>
-        <%= link_to("Sign In", new_user_session_path, class: 'user-signs') %>
+    <% if user_signed_in? %>
+      <%= link_to("Sign Out", destroy_user_session_path, method: :delete,
+        class: "sign-links user-signs") %>
+      <% if current_user.admin? %>
+        <%= link_to("Admin Section", admin_users_path,
+        class: "sign-links user-signs") %>
       <% end %>
-    </div>
+    <% else %>
+      <%= link_to("Sign Up", new_user_registration_path,
+        class: "sign-links user-signs") %>
+      <%= link_to("Sign In", new_user_session_path,
+        class: "sign-links user-signs") %>
+    <% end %>
+
+      <%= link_to("Donuts", root_path, class: "sign-links user-signs right-side") %>
+      <%= link_to('All Vendors', vendors_path, class: "sign-links user-signs right-side") %>
   </nav>
