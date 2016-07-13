@@ -13,8 +13,8 @@ feature "user upvotes donut ratings", %{
     end
 
     scenario 'I visit donut review page' do
-      expect(page).to have_button('+1')
-      expect(page).to have_button('-1')
+      expect(page).to_not have_button('+1')
+      expect(page).to_not have_button('-1')
     end
   end
 

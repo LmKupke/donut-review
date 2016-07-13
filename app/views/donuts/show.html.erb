@@ -18,10 +18,12 @@
     <h3> All Reviews</h3>
     <div class="individual-reviews">
       <% @reviews.each do |rev| %>
-        <div class="votebuttons">
-          <%= button_to '+1', upvote_api_review_votes_path(rev), class: "upvote-review", id: "upvote-review-#{rev.id}" %>
-          <%= button_to '-1', downvote_api_review_votes_path(rev), class: "downvote-review", id: "downvote-review-#{rev.id}" %>
-        </div>
+        <% if current_user %>
+          <div class="votebuttons">
+            <%= button_to '+1', upvote_api_review_votes_path(rev), class: "upvote-review", id: "upvote-review-#{rev.id}" %>
+            <%= button_to '-1', downvote_api_review_votes_path(rev), class: "downvote-review", id: "downvote-review-#{rev.id}" %>
+          </div>
+        <% end %>
         <span id="review-sum-<%= rev.id %>"> <%= rev.votes.sum(:vote) %></span>
         <div class="review-username">
           <%= rev.user.fullname%> </br>
