@@ -2,8 +2,6 @@
   <%= f.label :name %>:
   <%= f.text_field :name %><br />
 
-  <%= f.label :vendor_id %>:
-  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name %><br />
 
   <%= f.label :image %>:
   <%= f.url_field :image %><br />
@@ -11,5 +9,32 @@
   <%= f.label :description %>:
   <%= f.text_area :description %><br />
 
-   <%= f.submit %>
+  <%= f.label :vendor_id %>:
+
+  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, { include_blank: 'Add New Vendor'}, { onchange: 'showVendorForm()' } %><br />
+  <div class="vendor-form" style="display:none">
+
+    <h1> TEST</h1>
+    <%= fields_for @vendor do |v| %>
+      <%= v.label :name %>:
+      <%= v.text_field :name %><br />
+
+      <%= v.label :street_number %>:
+      <%= v.text_area :street_number %><br />
+
+      <%= v.label :street_name %>:
+      <%= v.text_area :street_name %><br />
+
+      <%= v.label :city %>:
+      <%= v.text_area :city %><br />
+
+      <%= v.label :state %>
+      <%= v.select :state, Vendor::STATES, { include_blank: false } %>
+
+      <%= v.label :zipcode %>:
+      <%= v.text_area :zipcode %><br />
+    <% end %>
+  </div>
+
+  <%= f.submit %>
 <% end %>

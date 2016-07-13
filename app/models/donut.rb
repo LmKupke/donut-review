@@ -2,6 +2,7 @@ class Donut < ActiveRecord::Base
   has_many :reviews
   belongs_to :vendor
   belongs_to :user
+  accepts_nested_attributes_for :vendor
 
   validates :name, presence: true
   validates :vendor_id, presence: true

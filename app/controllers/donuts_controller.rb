@@ -6,16 +6,26 @@ class DonutsController < ApplicationController
   end
 
   def new
+    @vendor = Vendor.new
     @donut = Donut.new
   end
 
   def create
-    @donut = Donut.new(new_donut_params)
-    @donut.user = current_user
-    if @donut.save
-      redirect_to @donut, notice: "You have successfully added a new donut!"
+    if !new_vendor_params["name"].empty?
+      @vendor = Vendor.new(new_vendor_params)
+      @vendor.user = current_user
+      if @vendor.save
+        @donut = Donut.new(new_donut_params)
+        @donut.user = current_user
+        @donut.vendor = @vendor
+        donut_valid?(@donut)
+      else
+        render :new
+      end
     else
-      render :new
+      @donut = Donut.new(new_donut_params)
+      @donut.user = current_user
+      donut_valid?(@donut)
     end
   end
 
@@ -56,4 +66,24 @@ class DonutsController < ApplicationController
       :description,
     )
   end
+
+  def new_vendor_params
+    params.require(:vendor).permit(
+    :name,
+    :street_number,
+    :street_name,
+    :city,
+    :state,
+    :zipcode
+    )
+  end
+
+  def donut_valid?(donut)
+    if donut.save
+      redirect_to donut_path(donut), notice: "You have successfully added a new donut!"
+    else
+      render :new
+    end
+  end
+
 end
