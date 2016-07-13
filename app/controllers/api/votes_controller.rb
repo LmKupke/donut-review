@@ -1,4 +1,3 @@
-# module API
 class Api::VotesController < ApiController
   before_action :pre_vote
 
@@ -35,4 +34,3 @@ class Api::VotesController < ApiController
     @value = Vote.find_or_initialize_by(review: @review, user: current_user)
   end
 end
-# end
