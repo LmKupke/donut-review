@@ -5,7 +5,6 @@ feature "user can navigate to all vendors page", %{
   I want to be able to navigate to the all vendors page from any page
   To look at all the vendors
 } do
-
   let!(:donut) { create(:donut) }
   let!(:user) { create(:user) }
 
@@ -57,6 +56,6 @@ feature "user can navigate to all vendors page", %{
       click_link "All Vendors"
 
       expect(page).to have_content("Vendors")
-    end    
+    end
   end
 end

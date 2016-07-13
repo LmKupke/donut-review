@@ -5,7 +5,6 @@ feature "user can navigate to donuts index", %{
   I want to be able to navigate to the donuts index from any page
   To look at delicious donuts
 } do
-
   let!(:donut) { create(:donut) }
   let!(:user) { create(:user) }
 
