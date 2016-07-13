@@ -51,7 +51,8 @@ feature "user sees a list of donuts", %{
     scenario "see another donut on page two of index" do
       create_list(:donut, 11)
       visit root_path
-      save_and_open_page
+      click_link "2"
+      expect(page).to have_link("Glazed")
     end
-  end  
+  end
 end

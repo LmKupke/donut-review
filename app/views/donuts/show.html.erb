@@ -18,6 +18,7 @@
     <%= button_to("Edit", edit_donut_review_path(@donut.id, rev.id), method: :get) %>
   <% end %>
 <% end %>
+<%= paginate @reviews %>
 
 <% if current_user %>
   <%= render partial: "reviews/reviewform" %>

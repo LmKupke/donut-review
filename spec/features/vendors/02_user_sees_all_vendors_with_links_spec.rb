@@ -34,5 +34,13 @@ feature 'user sees all vendors', %{
       expect(page).to have_link("Donna's Donuts")
       expect(page).to have_content("Boston, MA")
     end
+
+    scenario "see another donut on page two of index" do
+      create_list(:vendor, 11)
+      visit root_path
+      click_link('All Vendors')
+      click_link "2"
+      expect(page).to have_link("Donna's Donuts")
+    end
   end
 end
