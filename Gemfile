@@ -11,6 +11,7 @@ gem 'foundation-rails', '5.4.3.1'
 gem 'pg_search'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'capybara'
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'capybara-webkit', '1.11.1'
+  gem 'dotenv-rails'
 end
 
 group :test do
