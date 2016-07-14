@@ -159,11 +159,11 @@ h1 {
 }
 
 .row.name {
-  word-wrap: break-word;
-  text-align: center;
   margin-right: 0;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-#home_buttons {
+.home_buttons {
   padding-bottom: 20px;
 }
