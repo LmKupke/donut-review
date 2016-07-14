@@ -15,7 +15,7 @@
   <div class="vendor-form" style="display:none">
 
     <h1> TEST</h1>
-    <%= fields_for @vendor do |v| %>
+    <%= fields_for(Vendor.new,url: { controller: "donuts", action: "create" }, id: "new_donut_vendor") do |v| %>
       <%= v.label :name %>:
       <%= v.text_field :name %><br />
 
