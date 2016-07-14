@@ -26,7 +26,7 @@ class Index extends Component {
     var self = this;
     setTimeout(function() {
       self.aSync();
-    }, 2000);
+    }, 5000);
   }
 
   componentWillMount() {

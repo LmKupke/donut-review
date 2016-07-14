@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'reviews are paginated after 10 per page' do
+feature 'reviews are paginated after 10 per page', js: true do
   let!(:donut) { create(:donut) }
   context 'enough reviews exist to cause pagination' do
     scenario "eleventh review appears on page two of index" do

@@ -3,7 +3,7 @@ feature "user upvotes donut ratings", %{
   As a user
   I want to upvote and downvote ratings for a donut
   So I can act like I'm on Reddit
-} do
+}, js: true do
   context 'as an unauthenticated user, ' do
     let!(:donut) { create(:donut) }
     let!(:review) { create(:review, donut: donut, user: donut.user) }
@@ -44,7 +44,7 @@ feature "user upvotes donut ratings", %{
       expect(page).to have_content('-1')
     end
 
-    scenario 'I upvote & dwnvote & the vote cnt updates w/o reload', js: true do
+    scenario 'I upvote & dwnvote & the vote cnt updates w/o reload' do
       click_button('+1')
       click_button('-1')
 

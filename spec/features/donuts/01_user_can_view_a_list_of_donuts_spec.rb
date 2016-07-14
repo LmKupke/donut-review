@@ -4,7 +4,7 @@ feature "user sees a list of donuts", %{
    As a user
    I want to be able to navigate to the donuts' page
    To look at delicious donuts
-  } do
+  }, js: true do
   # ACCEPTANCE CRITERIA:
   # [X] Root is Donut#index
   # [X] Unauthenticated user is directed to the Donut#index
@@ -47,14 +47,4 @@ feature "user sees a list of donuts", %{
     end
   end
 
-  context 'enough donuts exist to cause pagination' do
-    scenario "see another donut on page two of index" do
-      create_list(:donut, 11)
-
-      visit root_path
-      click_link "2"
-
-      expect(page).to have_link("Glazed")
-    end
-  end
 end

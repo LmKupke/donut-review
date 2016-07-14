@@ -16,7 +16,7 @@ feature "user deletes donut", %{
       @not_creator = create(:user)
     end
 
-    scenario "user is donut creator and delete" do
+    scenario "user is donut creator and delete", js: true do
       login_as(@creator)
       visit root_path
       click_link @donut.name
@@ -25,7 +25,7 @@ feature "user deletes donut", %{
       expect(page).to_not have_link(@donut.name)
     end
 
-    scenario "user is not donut creator" do
+    scenario "user is not donut creator", js: true do
       login_as(@not_creator)
       visit root_path
       click_link @donut.name
