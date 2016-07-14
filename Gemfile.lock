@@ -234,6 +234,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   sass-rails (= 4.0.5)
   shoulda
+  shoulda-matchers
   uglifier (>= 1.3.0)
   valid_attribute
 
