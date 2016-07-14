@@ -25,7 +25,7 @@ class Index extends Component {
     this.loadDonutsFromServer();
     var self = this;
     setTimeout(function() {
-      this.aSync();
+      self.aSync();
     }, 2000);
   }
 
