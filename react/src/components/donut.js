@@ -4,11 +4,11 @@ const Donut = props => {
   return(
     <div className='index-donut'>
       <ul>
-        <li>{props.body}</li>
+        <li>{props.name}</li>
       </ul>
     </div>
-  )
+  );
 
 }
 
-export default Review;
+export default Donut;

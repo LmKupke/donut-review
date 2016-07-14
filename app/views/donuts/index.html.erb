@@ -11,7 +11,11 @@
   </div>
 <% end %>
 
-<div class="donut-tiles">
+<div id="app">
+</div>
+
+
+<!-- <div class="donut-tiles">
   <% @donuts.each do |donut| %>
     <ul class="donut-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
       <li>
@@ -20,6 +24,6 @@
         <%= link_to "#{donut.name}", donut_path(donut) %>
       </li>
     </ul>
-  <% end %>
+  <% end %> -->
   <%= paginate @donuts %>
 </div>
