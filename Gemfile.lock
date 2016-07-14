@@ -50,6 +50,12 @@ GEM
     capybara-webkit (1.11.1)
       capybara (>= 2.3.0, < 2.8.0)
       json
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     coderay (1.1.1)
     coveralls (0.8.13)
       json (~> 1.8)
@@ -98,6 +104,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mimemagic (0.3.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
@@ -218,6 +225,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   capybara-webkit (= 1.11.1)
+  carrierwave
   coveralls
   database_cleaner
   devise
@@ -237,6 +245,9 @@ DEPENDENCIES
   shoulda-matchers
   uglifier (>= 1.3.0)
   valid_attribute
+
+RUBY VERSION
+   ruby 2.2.3p173
 
 BUNDLED WITH
    1.12.5

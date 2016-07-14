@@ -5,6 +5,9 @@ class Donut < ActiveRecord::Base
   has_many :reviews
   belongs_to :vendor
   belongs_to :user
+
+  mount_uploader :image, DonutPhotoUploader
+
   accepts_nested_attributes_for :vendor
 
   validates :name, presence: true

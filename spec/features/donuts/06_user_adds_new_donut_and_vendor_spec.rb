@@ -20,7 +20,7 @@ feature "user adds a new donut with a new vendor", %{
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
     select(vendor.name, from: "Vendor")
-    fill_in("Image", with: "https://goo.gl/dfV24M")
+    attach_file('Image', "#{Rails.root}/spec/support/images/photo.png")
     fill_in("Description", with: "Everyone loves this donut.")
 
     expect(page).to_not have_content("#new_donut_vendor")
@@ -35,7 +35,7 @@ feature "user adds a new donut with a new vendor", %{
     fill_in("Name", with: "glazed")
     select(vendor.name, from: "Vendor")
     select("Add New Vendor", from: "Vendor")
-    fill_in("Image", with: "https://goo.gl/dfV24M")
+    attach_file('Image', "#{Rails.root}/spec/support/images/photo.png")
     fill_in("Description", with: "Everyone loves this donut.")
 
     expect(page).to have_css("input#vendor_name")
@@ -50,7 +50,7 @@ feature "user adds a new donut with a new vendor", %{
     fill_in("Name", with: "glazed")
     select(vendor.name, from: "Vendor")
     select("Add New Vendor", from: "Vendor")
-    fill_in("Image", with: "https://goo.gl/dfV24M")
+    attach_file('Image', "#{Rails.root}/spec/support/images/photo.png")
     fill_in("Description", with: "Everyone loves this donut.")
 
     fill_in('Vendor Name', with: 'Union Square Donuts')

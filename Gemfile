@@ -10,6 +10,7 @@ gem 'devise'
 gem 'foundation-rails', '5.4.3.1'
 gem 'pg_search'
 gem 'kaminari'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'capybara'
