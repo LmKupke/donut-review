@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user deletes a review" do
+feature "user deletes a review", js: true do
   let!(:donut) { create(:donut) }
 
   scenario "user is the review creator" do

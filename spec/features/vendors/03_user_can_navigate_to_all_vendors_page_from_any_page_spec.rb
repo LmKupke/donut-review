@@ -4,7 +4,7 @@ feature "user can navigate to all vendors page", %{
   As a user
   I want to be able to navigate to the all vendors page from any page
   To look at all the vendors
-} do
+}, js: true do
   let!(:donut) { create(:donut) }
   let!(:user) { create(:user) }
 

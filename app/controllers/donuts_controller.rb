@@ -3,7 +3,7 @@ class DonutsController < ApplicationController
 
   def index
     if params[:query].nil?
-      @donuts = Donut.page(params[:page]).per(10)
+      @donuts = Donut.all
     else
       @donuts = Donut.global_search(params[:query])
       @donut = Donut.new

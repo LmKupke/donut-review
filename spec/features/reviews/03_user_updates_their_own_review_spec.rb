@@ -3,7 +3,7 @@ require "rails_helper"
 feature "user updates a review" do
   let!(:donut) { create(:donut) }
 
-  scenario "user is the review creator" do
+  scenario "user is the review creator", js: true do
     user = create(:user)
     login_as(user)
     visit root_path
@@ -20,7 +20,7 @@ feature "user updates a review" do
     expect(page).to have_content("actually, not so wunderbar")
   end
 
-  scenario "user is not the review creator" do
+  scenario "user is not the review creator", js: true do
     user = create(:user)
     login_as(user)
     visit root_path

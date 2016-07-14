@@ -1,5 +1,5 @@
 require "rails_helper"
-feature "user reviews a donut" do
+feature "user reviews a donut", js: true do
   let!(:donut) { create(:donut) }
 
   context "user authenticated" do

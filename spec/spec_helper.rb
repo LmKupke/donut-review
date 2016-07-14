@@ -86,4 +86,14 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+def in_browser(name)
+  old_session = Capybara.session_name
+
+  Capybara.session_name = name
+  yield
+
+  Capybara.session_name = old_session
+end
+
 end

@@ -9,6 +9,8 @@ Capybara.javascript_driver = :webkit
 
 Capybara::Webkit.configure do |config|
   config.allow_url("fonts.googleapis.com")
+  config.allow_url("upload.wikimedia.org")
+  config.allow_url("www.polyvore.com")
 end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
