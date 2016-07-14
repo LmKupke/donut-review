@@ -5,8 +5,8 @@ feature "user can search site", %{
  I want to be able to search the site
  So I can view information that interests me
 } do
- let!(:donut) { create(:donut) }
- let!(:user) { create(:user) }
+  let!(:donut) { create(:donut) }
+  let!(:user) { create(:user) }
 
  context "As an unauthenticated user" do
    scenario "I am able to search from the root" do
