@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    resources :donuts
     resources :reviews do
       resources :votes do
         collection do
