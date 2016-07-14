@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $shadow: #ed5aa0;
 $white: #ffffff;
+$black: #000000;
 $title-font-color: #d6dbe0;
 $turquoise: #13bde1;
 $form-background: rgba(0, 0, 0, 0.5);
@@ -28,4 +29,18 @@ $form-background: rgba(0, 0, 0, 0.5);
   margin-top: 50px;
   padding: 20px;
   width: 400px;
+}
+
+.vendors-title {
+  color: $black;
+  font-family: "Righteous";
+  margin: 20px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.individual-vendor {
+  font-size: 20px;
+  list-style: none;
+  margin-left: 50px;
 }

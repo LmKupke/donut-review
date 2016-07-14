@@ -68,9 +68,10 @@ $pink: #fac8e2;
 .donut-list {
   font-family: "Muli";
   font-size: 25px;
-  list-style-type: none;
+  list-style: none;
+  margin-left: 50px;
   margin-top: 25px;
-  text-align: center;
+  text-align: left;
 }
 
 h1 {
@@ -155,4 +156,14 @@ h1 {
   border-radius: 10px;
   height: 100px;
   width: 100px;
+}
+
+.row.name {
+  word-wrap: break-word;
+  text-align: center;
+  margin-right: 0;
+}
+
+#home_buttons {
+  padding-bottom: 20px;
 }
