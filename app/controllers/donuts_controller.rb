@@ -75,21 +75,21 @@ class DonutsController < ApplicationController
 
   def new_vendor_params
     params.require(:vendor).permit(
-    :name,
-    :street_number,
-    :street_name,
-    :city,
-    :state,
-    :zipcode
+      :name,
+      :street_number,
+      :street_name,
+      :city,
+      :state,
+      :zipcode
     )
   end
 
   def donut_valid?(donut)
     if donut.save
-      redirect_to donut_path(donut), notice: "You have successfully added a new donut!"
+      redirect_to donut_path(donut),
+        notice: "You have successfully added a new donut!"
     else
       render :new
     end
   end
-
 end
