@@ -6,7 +6,7 @@ feature "user can see donuts on vendor page", %{
   To look at all the donuts that belong to a vendor
 } do
   let!(:donut) { create(:donut) }
-  let!(:donut2) { create(:donut, vendor: donut.vendor, name: "Chocolate")}
+  let!(:donut2) { create(:donut, vendor: donut.vendor, name: "Chocolate") }
   let!(:user) { create(:user) }
 
   scenario "I can navigate to the vendors#index page and see a vendor " do
