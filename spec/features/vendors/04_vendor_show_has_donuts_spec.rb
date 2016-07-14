@@ -7,10 +7,8 @@ feature "user can see donuts on vendor page", %{
 } do
   let!(:donut) { create(:donut) }
   let!(:donut2) { create(:donut, vendor: donut.vendor, name: "Chocolate") }
-  let!(:user) { create(:user) }
 
   scenario "I can navigate to the vendors#index page and see a vendor " do
-    login_as(user)
     visit root_path
     click_link "All Vendors"
     expect(page).to have_content("Vendors")
@@ -19,7 +17,6 @@ feature "user can see donuts on vendor page", %{
 
   scenario "I can navigate to the vendors#index page to vendor show and
     see list of donuts " do
-    login_as(user)
     visit root_path
     click_link "All Vendors"
     click_link donut.vendor.name
