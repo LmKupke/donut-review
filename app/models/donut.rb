@@ -1,5 +1,6 @@
 class Donut < ActiveRecord::Base
   include PgSearch
+  paginates_per 10
 
   has_many :reviews
   belongs_to :vendor

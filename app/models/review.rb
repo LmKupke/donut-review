@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
   include PgSearch
 
+  paginates_per 10
   belongs_to :user
   belongs_to :donut
   has_many :votes

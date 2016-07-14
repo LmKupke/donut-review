@@ -11,13 +11,17 @@
   </div>
 <% end %>
 
-<div >
+<div class="donut-tiles">
   <% @donuts.each do |donut| %>
-    <ul class="donut-list">
+    <ul class="donut-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
       <li>
+        <%= image_tag(donut.image, id: "individual-donut",
+          class: "donut-image-index") %>
         <%= link_to "#{donut.name}", donut_path(donut) %>
       </li>
     </ul>
   <% end %>
+  <% if @donuts.length >= 10 %>
+    <%= paginate @donuts %>
+  <% end %>
 </div>
-<%= link_to 'All Vendors', vendors_path %>
