@@ -1,5 +1,6 @@
-<h1>Vendors</h1>
-<ul>
+<h1 class="vendors-title">Vendors</h1>
+
+<ul class="individual-vendor">
   <% @vendors.each do |vendor| %>
     <li>
       <%= link_to vendor.name, vendor_path(vendor) %><%= " | " + vendor.city + ", " + vendor.state %>
