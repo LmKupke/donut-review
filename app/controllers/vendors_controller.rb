@@ -22,6 +22,7 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+    @donuts = @vendor.donuts
   end
 
   private
