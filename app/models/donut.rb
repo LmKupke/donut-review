@@ -15,9 +15,7 @@ class Donut < ActiveRecord::Base
   multisearchable against: [:name, :description]
 
   pg_search_scope :search_donut_and_reviews,
-    against: [:name, :description], associated_against: {
-      reviews: [:body]
-    }
+    against: [:name, :description], associated_against: { reviews: [:body] }
 
   scope :global_search, lambda { |query|
     search_donut_and_reviews(query) if query.present?
