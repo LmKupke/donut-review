@@ -11,12 +11,12 @@ feature "user can see donuts on vendor page", %{
   scenario "I can navigate to the vendors#index page and see a vendor " do
     visit root_path
     click_link "All Vendors"
+
     expect(page).to have_content("Vendors")
     expect(page).to have_link(donut.vendor.name)
   end
 
-  scenario "I can navigate to the vendors#index page to vendor show and
-    see list of donuts " do
+  scenario "I can navigate to the vendor show and see list of donuts " do
     visit root_path
     click_link "All Vendors"
     click_link donut.vendor.name
