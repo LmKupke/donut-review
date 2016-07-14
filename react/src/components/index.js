@@ -10,7 +10,7 @@ class Index extends Component {
     this.setDonuts = this.setDonuts.bind(this);
   }
 
-  componentDidMount() {
+  loadDonutsFromServer() {
     $.ajax({
       url: '/api/donuts',
       contentType: 'application/json'
@@ -18,7 +18,12 @@ class Index extends Component {
     .done(data => {
       this.setState({ donuts: data })
     });
+  };
+
+  componentDidMount() {
+    setInterval(this.loadDonutsFromServer(), 200);
   }
+
 
   setDonuts() {
     return this.state.donuts.map(data=> {
@@ -33,6 +38,9 @@ class Index extends Component {
     })
   }
 
+  componentWillMount() {
+    this.setDonuts();
+  }
 
   render() {
     return (

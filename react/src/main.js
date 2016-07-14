@@ -3,10 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Index from './components/index';
 
-
 $(function() {
-  ReactDOM.render(
-    <Index />,
-    document.getElementsByClassName("donut-tiles")[0]
-  );
+  let donutsIndex = document.getElementsByClassName('donut-tiles')[0];
+  if (donutsIndex) {
+    ReactDOM.render(
+      <Index />,
+      donutsIndex
+    );
+  }
 });
