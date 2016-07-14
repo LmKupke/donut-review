@@ -15,11 +15,11 @@
 
     <div class="small-3 columns sign-nav">
         <div class="small-3 columns" id="help">
-          <%= submit_tag "Search", class: "search-button button tiny"%>
+          <%= form_tag donuts_path, method: :get do %>
+            <%= submit_tag "Search", class: "search-button button tiny"%>
         </div>
         <div class="small-8 columns searchbuttonform">
-          <%= form_tag donuts_path, method: :get do %>
-          <%= text_field_tag :query %>
+            <%= text_field_tag :query %>
           <% end %>
         </div>
     </div>
