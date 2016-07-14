@@ -7,6 +7,6 @@ import Index from './components/index';
 $(function() {
   ReactDOM.render(
     <Index />,
-    document.getElementById('app')
+    document.getElementsByClassName("donut-tiles")[0]
   );
 });

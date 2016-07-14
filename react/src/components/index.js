@@ -24,8 +24,10 @@ class Index extends Component {
     return this.state.donuts.map(data=> {
       return (
         <Donut
-        key= {data["id"]}
+        key= {data['id']}
+        donut_id= {data['id']}
         name= {data['name']}
+        image= {data['image']}
         />
       );
     })
