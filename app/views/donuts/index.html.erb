@@ -12,14 +12,15 @@
 <% end %>
 
 <div class="donut-tiles">
-  <% @donuts.each do |donut| %>
-    <ul class="donut-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <ul class="donut-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <% @donuts.each do |donut| %>
       <li>
         <%= image_tag(donut.image, id: "individual-donut",
           class: "donut-image-index") %>
         <%= link_to "#{donut.name}", donut_path(donut) %>
       </li>
-    </ul>
-  <% end %>
-  <%= paginate @donuts %>
+    <% end %>
+  </ul>
 </div>
+
+<%= paginate @donuts %>
