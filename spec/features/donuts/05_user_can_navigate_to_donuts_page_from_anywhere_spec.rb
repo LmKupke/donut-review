@@ -14,7 +14,7 @@ feature "user can navigate to donuts index", %{
       login_as(user)
       visit root_path
       click_link donut.name
-      click_link "Donuts"
+      click_link "Home"
 
       expect(page).to have_content("Donut Judge Me")
       expect(page).to have_content(donut.name)
@@ -25,7 +25,7 @@ feature "user can navigate to donuts index", %{
       login_as(user)
       visit root_path
       click_link "Add New Donut"
-      click_link "Donuts"
+      click_link "Home"
 
       expect(page).to have_content("Donut Judge Me")
       expect(page).to have_content(donut.name)
@@ -36,7 +36,7 @@ feature "user can navigate to donuts index", %{
       login_as(user)
       visit root_path
       click_link "Add New Vendor"
-      click_link "Donuts"
+      click_link "Home"
 
       expect(page).to have_content("Donut Judge Me")
       expect(page).to have_content(donut.name)
@@ -47,7 +47,7 @@ feature "user can navigate to donuts index", %{
       login_as(user)
       visit root_path
       click_link "All Vendors"
-      click_link "Donuts"
+      click_link "Home"
 
       expect(page).to have_content("Donut Judge Me")
       expect(page).to have_content(donut.name)
@@ -59,7 +59,7 @@ feature "user can navigate to donuts index", %{
       show page" do
       visit root_path
       click_link donut.name
-      click_link "Donuts"
+      click_link "Home"
 
       expect(page).to have_content("Donut Judge Me")
       expect(page).to have_content(donut.name)
@@ -69,7 +69,7 @@ feature "user can navigate to donuts index", %{
       section" do
       visit root_path
       click_link "All Vendors"
-      click_link "Donuts"
+      click_link "Home"
 
       expect(page).to have_content("Donut Judge Me")
       expect(page).to have_content(donut.name)

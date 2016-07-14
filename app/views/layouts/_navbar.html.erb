@@ -1,18 +1,32 @@
-  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <% if user_signed_in? %>
-      <%= link_to("Sign Out", destroy_user_session_path, method: :delete,
-        class: "sign-links user-signs") %>
-      <% if current_user.admin? %>
-        <%= link_to("Admin Section", admin_users_path,
-        class: "sign-links user-signs") %>
+<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+  <div clas="row">
+    <div class="small-9 columns sign-nav">
+      <% if user_signed_in? %>
+        <%= link_to("Sign Out", destroy_user_session_path, method: :delete,
+          class: "sign-links user-signs") %>
+        <% if current_user.admin? %>
+          <%= link_to("Admin Section", admin_users_path,
+          class: "sign-links user-signs") %>
+        <% end %>
+      <% else %>
+        <%= link_to("Sign Up", new_user_registration_path,
+          class: "sign-links user-signs") %>
+        <%= link_to("Sign In", new_user_session_path,
+          class: "sign-links user-signs") %>
       <% end %>
-    <% else %>
-      <%= link_to("Sign Up", new_user_registration_path,
-        class: "sign-links user-signs") %>
-      <%= link_to("Sign In", new_user_session_path,
-        class: "sign-links user-signs") %>
-    <% end %>
-
-      <%= link_to("Donuts", root_path, class: "sign-links user-signs right-side") %>
+      <%= link_to("Home", root_path, class: "sign-links user-signs right-side") %>
       <%= link_to('All Vendors', vendors_path, class: "sign-links user-signs right-side") %>
-  </nav>
+    </div>
+
+    <div class="small-3 columns sign-nav">
+        <div class="small-3 columns" id="help">
+          <%= form_tag donuts_path, method: :get do %>
+            <%= submit_tag "Search", class: "search-button button tiny"%>
+        </div>
+        <div class="small-8 columns searchbuttonform">
+          <span class="query">  <%= text_field_tag :query %> </span>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</nav>
