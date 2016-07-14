@@ -31,19 +31,21 @@ feature "user adds a new donut", %{
     click_link "Add New Donut"
     fill_in("Name", with: "glazed")
     select(vendor.name, from: "Vendor")
-    fill_in("Image", with: "https://goo.gl/dfV24M")
+    attach_file('Image', "#{Rails.root}/spec/support/images/photo.png")
     fill_in("Description", with: "Everyone loves this donut.")
     click_button("Create Donut")
 
     expect(page).to have_content("glazed")
+    expect(page).to have_css("img[src*='photo.png']")
   end
 
   scenario "User fills in new donut form inputs incorrectly" do
-    vendor = create(:vendor)
+    @vendors = create(:vendor)
+    @vendor = Vendor.new
     click_link "Add New Donut"
     fill_in("Name", with: "")
-    select(vendor.name, from: "Vendor")
-    fill_in("Image", with: "")
+    select(@vendors.name, from: "Vendor")
+    attach_file("Image", "#{Rails.root}/spec/support/images/photo.png")
     fill_in("Description", with: "")
     click_button("Create Donut")
 
