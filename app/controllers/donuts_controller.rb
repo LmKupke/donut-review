@@ -2,7 +2,12 @@ class DonutsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @donuts = Donut.all
+    if params[:query].nil?
+      @donuts = Donut.page(params[:page]).per(10)
+    else
+      @donuts = Donut.global_search(params[:query])
+      @donut = Donut.new
+    end
   end
 
   def new
@@ -46,7 +51,8 @@ class DonutsController < ApplicationController
 
   def show
     @donut = Donut.find(params[:id])
-    @reviews = @donut.reviews
+    @reviews = @donut.reviews.page(params[:page]).per(10)
+    # @vendors = Vendor.page(params[:page]).per(10)
     @review = Review.new
   end
 

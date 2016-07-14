@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "user adds a new donut with a ", %{
+feature "user adds a new donut with a new vendor", %{
    As a user
-   I want to be able to add a new donut
+   I want to be able to add a new donut and a new vendor
    So that a user can add reviews
   } do
   # ACCEPTANCE CRITERIA:
@@ -12,43 +12,32 @@ feature "user adds a new donut with a ", %{
   # [X] Submitting correct form takes us to donut#show
   # [X] Submitting incorrect renders the form with errors
 
-  context "ljkadfj" do
+  scenario "User fills in new donut form and doesn't see Vendor Form" do
+    user = create(:user)
+    login_as(user)
+    visit root_path
+    vendor = create(:vendor)
+    click_link "Add New Donut"
+    fill_in("Name", with: "glazed")
+    select(vendor.name, from: "Vendor")
+    fill_in("Image", with: "https://goo.gl/dfV24M")
+    fill_in("Description", with: "Everyone loves this donut.")
 
-  # let!(:user) { create (:user) }
-  # before(:each) do
-  #   login_as(user)
-  #   visit root_path
-  # end
-
-    scenario "User fills in new donut form and doesn't see Vendor Form" do
-      user = create(:user)
-      login_as(user)
-      visit root_path
-      vendor = create(:vendor)
-      click_link "Add New Donut"
-      fill_in("Name", with: "glazed")
-      select(vendor.name, from: "Vendor")
-      fill_in("Image", with: "https://goo.gl/dfV24M")
-      fill_in("Description", with: "Everyone loves this donut.")
-
-      expect(page).to_not have_content("#new_donut_vendor")
-    end
+    expect(page).to_not have_content("#new_donut_vendor")
   end
 
-  context "please work" do
-    scenario "User fills in new donut form and wants a new Vendor form" do
-      user = create(:user)
-      vendor = create(:vendor)
-      login_as(user)
-      visit root_path
-      click_link "Add New Donut"
-      save_and_open_page
-      fill_in("Name", with: "glazed")
-      select(vendor.name, from: "Vendor")
-      select("Add New Vendor", from: "Vendor")
-      fill_in("Image", with: "https://goo.gl/dfV24M")
-      fill_in("Description", with: "Everyone loves this donut.")
-      expect(page).to have_content("#new_donut_vendor")
-    end
+  scenario "User fills in new donut form and wants a new Vendor form", js: true do
+    user = create(:user)
+    vendor = create(:vendor)
+    login_as(user)
+    visit root_path
+    click_link "Add New Donut"
+    fill_in("Name", with: "glazed")
+    select(vendor.name, from: "Vendor")
+    select("Add New Vendor", from: "Vendor")
+    fill_in("Image", with: "https://goo.gl/dfV24M")
+    fill_in("Description", with: "Everyone loves this donut.")
+
+    expect(page).to have_css("input#vendor_name")
   end
 end

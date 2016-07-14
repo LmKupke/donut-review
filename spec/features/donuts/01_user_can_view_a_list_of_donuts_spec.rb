@@ -46,4 +46,15 @@ feature "user sees a list of donuts", %{
       expect(page).to have_css("img#individual-donut")
     end
   end
+
+  context 'enough donuts exist to cause pagination' do
+    scenario "see another donut on page two of index" do
+      create_list(:donut, 11)
+
+      visit root_path
+      click_link "2"
+
+      expect(page).to have_link("Glazed")
+    end
+  end
 end

@@ -33,7 +33,7 @@ feature "user reviews a donut" do
     scenario "user does not see review form on donut show page" do
       visit root_path
       click_link donut.name
-      expect(page).to_not have_css("form")
+      expect(page).to_not have_content("Add Review")
     end
   end
 end

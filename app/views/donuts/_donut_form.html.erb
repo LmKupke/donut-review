@@ -1,40 +1,41 @@
 <%= form_for @donut do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br />
+  <div class="field">
+    <%= f.label :name, class: 'form-text' %>
+    <%= f.text_field :name %>
+  </div>
 
-
-  <%= f.label :image %>:
-  <%= f.url_field :image %><br />
-
-  <%= f.label :description %>:
-  <%= f.text_area :description %><br />
-
-  <%= f.label :vendor_id %>:
-
+  <%= f.label :vendor_id, class: 'form-text' %>
   <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, { include_blank: 'Add New Vendor'}, { onchange: 'showVendorForm()' } %><br />
-  <div class="vendor-form" style="display:none">
 
-    <h1> TEST</h1>
-    <%= fields_for(Vendor.new,url: { controller: "donuts", action: "create" }, id: "new_donut_vendor") do |v| %>
-      <%= v.label :name %>:
+
+  <%= f.label :image, class: 'form-text' %>
+  <%= f.url_field :image %>
+
+  <%= f.label :description, class: 'form-text' %>
+  <%= f.text_area :description %>
+
+  <div class="vendor-form" style="display:none">
+    <%= fields_for(Vendor.new,url: { controller: "donuts", action: "create" }) do |v| %>
+      <%= v.label :name, "Vendor Name", class: 'form-text'  %>
       <%= v.text_field :name %><br />
 
-      <%= v.label :street_number %>:
+      <%= v.label :street_number, class: 'form-text' %>
       <%= v.text_area :street_number %><br />
 
-      <%= v.label :street_name %>:
+      <%= v.label :street_name, class: 'form-text' %>
       <%= v.text_area :street_name %><br />
 
-      <%= v.label :city %>:
+      <%= v.label :city, class: 'form-text' %>
       <%= v.text_area :city %><br />
 
-      <%= v.label :state %>
+      <%= v.label :state, class: 'form-text' %>
       <%= v.select :state, Vendor::STATES, { include_blank: false } %>
 
-      <%= v.label :zipcode %>:
+      <%= v.label :zipcode, class: 'form-text' %>
       <%= v.text_area :zipcode %><br />
     <% end %>
   </div>
 
-  <%= f.submit %>
+   <%= f.submit class: 'button radius' %>
+
 <% end %>
