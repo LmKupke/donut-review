@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
 
+
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '4.0.5'
@@ -7,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails', '5.4.3.1'
+gem 'pg_search'
 gem 'kaminari'
 gem 'carrierwave'
 
@@ -23,6 +25,7 @@ end
 group :test do
   gem 'launchy', require: false
   gem 'coveralls', require: false
+  gem "shoulda-matchers"
   gem 'database_cleaner'
 end
 

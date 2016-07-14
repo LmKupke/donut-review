@@ -40,10 +40,12 @@ feature "user adds a new donut", %{
   end
 
   scenario "User fills in new donut form inputs incorrectly" do
-    vendor = create(:vendor)
+    @vendors = create(:vendor)
+    @vendor = Vendor.new
     click_link "Add New Donut"
     fill_in("Name", with: "")
-    select(vendor.name, from: "Vendor")
+    select(@vendors.name, from: "Vendor")
+    attach_file("Image", "#{Rails.root}/spec/support/images/photo.png")
     fill_in("Description", with: "")
     click_button("Create Donut")
 

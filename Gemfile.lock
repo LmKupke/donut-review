@@ -113,6 +113,10 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pg_search (1.0.6)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     pkg-config (1.1.7)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -231,12 +235,14 @@ DEPENDENCIES
   kaminari
   launchy
   pg (~> 0.15)
+  pg_search
   pry-rails
   rails (= 4.2.5)
   rails_12factor
   rspec-rails (~> 3.0)
   sass-rails (= 4.0.5)
   shoulda
+  shoulda-matchers
   uglifier (>= 1.3.0)
   valid_attribute
 

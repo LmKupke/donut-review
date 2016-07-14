@@ -21,5 +21,7 @@
       </li>
     </ul>
   <% end %>
-  <%= paginate @donuts %>
+  <% if @donuts.length >= 10 %>
+    <%= paginate @donuts %>
+  <% end %>
 </div>
