@@ -1,4 +1,6 @@
 class Donut < ActiveRecord::Base
+  mount_uploader :image, DonutPhotoUploader
+
   paginates_per 10
   has_many :reviews
   belongs_to :vendor
