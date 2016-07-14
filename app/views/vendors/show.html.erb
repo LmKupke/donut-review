@@ -1,2 +1,14 @@
 <h1><%= @vendor.name %></h1>
 <h4><%= @vendor.full_address %></h4>
+
+<ul class= "donut-list">
+  <% @donuts.each do |donut| %>
+    <li>
+      <div>
+        <%= image_tag(donut.image, id: "individual-donut",
+        class: "donut-image-index") %>
+      </div>
+      <%= link_to "#{donut.name}", donut_path(donut) %>
+    </li>
+  <% end %>
+</ul>

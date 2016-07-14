@@ -21,15 +21,23 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @donut = @review.donut
   end
 
   def update
     @review = Review.find(params[:id])
-    redirect_to review_path(@review)
+    @review.user = current_user
+
+    @review.update_attributes(review_params)
+    if @review.save
+      redirect_to donut_path(@review.donut)
+    end
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
+    redirect_to donut_path(@review.donut)
   end
 
   private

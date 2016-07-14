@@ -2,8 +2,6 @@ require 'rails_helper'
 
 feature "test review content in email_body" do
   scenario "review a product" do
-    # Clear out any previously delivered emails
-
     donut = create(:donut)
     reviewuser = create(:user)
 

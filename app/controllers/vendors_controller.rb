@@ -1,4 +1,10 @@
 class VendorsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
+  def index
+    @vendors = Vendor.page(params[:page]).per(10)
+  end
+
   def new
     @vendor = Vendor.new
   end
@@ -16,6 +22,7 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+    @donuts = @vendor.donuts
   end
 
   private

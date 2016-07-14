@@ -1,18 +1,27 @@
 <div class="small-12 large-12 medium-12 crop columns">
-  <div class="small-offset-3 large-offset-3 medium-offset-2 columns">
+  <div class="small-centered large-centered medium-centered">
     <h1 class= "site-title shadow">Donut Judge Me</h1>
   </div>
 </div>
 
-<% @donuts.each do |donut| %>
-  <ul>
-    <li>
-      <%= link_to "#{donut.name}", donut_path(donut) %>
-    </li>
-  </ul>
+<% if user_signed_in? %>
+  <div class="add-new-links">
+    <%= link_to "Add New Donut", new_donut_path, class: 'add-donut-link' %>
+    <%= link_to "Add New Vendor", new_vendor_path, class: 'add-vendor-link' %>
+  </div>
 <% end %>
 
-<% if user_signed_in? %>
-  <%= link_to "Add New Donut", new_donut_path, class: 'add-donut-link' %>
-  <%= link_to "Add New Vendor", new_vendor_path %>
-<% end %>
+<div class="donut-tiles">
+  <% @donuts.each do |donut| %>
+    <ul class="donut-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+      <li>
+        <%= image_tag(donut.image, id: "individual-donut",
+          class: "donut-image-index") %>
+        <%= link_to "#{donut.name}", donut_path(donut) %>
+      </li>
+    </ul>
+  <% end %>
+  <% if @donuts.length >= 10 %>
+    <%= paginate @donuts %>
+  <% end %>
+</div>

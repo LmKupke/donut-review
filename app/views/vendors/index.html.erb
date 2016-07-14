@@ -1,0 +1,9 @@
+<h1>Vendors</h1>
+<ul>
+  <% @vendors.each do |vendor| %>
+    <li>
+      <%= link_to vendor.name, vendor_path(vendor) %><%= " | " + vendor.city + ", " + vendor.state %>
+    </li>
+  <% end %>
+  <%= paginate @vendors %>
+</ul>
