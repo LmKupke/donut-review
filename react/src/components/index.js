@@ -8,6 +8,7 @@ class Index extends Component {
       donuts: []
     }
     this.setDonuts = this.setDonuts.bind(this);
+    this.loadDonutsFromServer = this.loadDonutsFromServer.bind(this)
   }
 
   loadDonutsFromServer() {
@@ -18,12 +19,19 @@ class Index extends Component {
     .done(data => {
       this.setState({ donuts: data })
     });
-  };
-
-  componentDidMount() {
-    setInterval(this.loadDonutsFromServer(), 200);
   }
 
+  aSync() {
+    this.loadDonutsFromServer();
+    var self = this;
+    setTimeout(function() {
+      this.aSync();
+    }, 2000);
+  }
+
+  componentWillMount() {
+    this.aSync();
+  }
 
   setDonuts() {
     return this.state.donuts.map(data=> {
@@ -38,18 +46,13 @@ class Index extends Component {
     })
   }
 
-  componentWillMount() {
-    this.setDonuts();
-  }
-
   render() {
-    return (
+      return (
       <div className='index-donut'>
         {this.setDonuts()}
       </div>
     )
   }
-
 }
 
 

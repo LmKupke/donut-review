@@ -8,6 +8,6 @@ class Api::DonutsController < ApiController
   protected
 
   def pre_render
-    @donuts = Donut.page(params[:page]).per(10)
+    @donuts = Donut.all
   end
 end
