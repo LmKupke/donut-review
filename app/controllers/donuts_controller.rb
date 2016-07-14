@@ -87,7 +87,7 @@ class DonutsController < ApplicationController
   def donut_valid?(donut)
     if donut.save
       redirect_to donut_path(donut),
-        notice: "You have successfully added a new donut!"
+      notice: "You have successfully added a new donut!"
     else
       render :new
     end
