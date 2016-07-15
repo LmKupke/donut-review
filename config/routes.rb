@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :vendors
   resources :users, only: [:show, :destroy]
   resources :donuts, only: [:show] do
-    resources :reviews
+    resources :reviews, except: [:index, :show]
   end
 
   namespace :api do
