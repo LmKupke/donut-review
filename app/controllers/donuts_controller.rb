@@ -51,6 +51,7 @@ class DonutsController < ApplicationController
 
   def show
     @donut = Donut.find(params[:id])
+    @vendor = @donut.vendor
     @reviews = @donut.reviews.page(params[:page]).per(10)
     @review = Review.new
     total_reviews = @donut.reviews
