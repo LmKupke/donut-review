@@ -39,7 +39,7 @@ feature "user creates an account", %{
       fill_in("Password Confirmation", with: "password")
       click_button('Sign Up')
 
-      expect(page).to have_content("You have successfully signed up!")
+      expect(page).to have_content("Welcome! You have signed up successfully.")
     end
 
     scenario "using an invalid email address to create a new account will
