@@ -4,8 +4,9 @@
       <%= " | " + @average.to_s + " Stars" %>
     <% end %>
   </h1>
+  <h4 class="donut-title"> <%= link_to @vendor.name, vendor_path(@vendor) %> </h4><br />
   <%= image_tag(@donut.image, id: "individual-donut", class: "donut-image")%>
-  <h3 class="donut-description"><%= @donut.description %></h3>
+  <h3 class="donut-description"><%= @donut.description %></h3><br />
 
   <% if current_user == @donut.user %>
     <ul class="button-group radius">
