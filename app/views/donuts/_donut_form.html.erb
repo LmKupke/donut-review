@@ -4,19 +4,19 @@
     <%= f.text_field :name %>
   </div>
 
-  <%= f.label :vendor_id, class: 'form-text' %>
-  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, { prompt: "Please Select", include_blank: 'Add New Vendor'}, { onchange: 'showVendorForm()' } %><br />
-
-
   <%= f.label :image, class: 'form-text' %>
   <%= f.file_field :image %>
 
   <%= f.label :description, class: 'form-text' %>
   <%= f.text_area :description %>
 
+  <%= f.label :vendor_id, class: 'form-text' %>
+  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, { prompt: "Please Select", include_blank: 'Add New Vendor'}, { onchange: 'showVendorForm()' } %><br />
+
   <div class="vendor-form" style="display:none">
+    <h2><u>Add New Vendor</u></h1>
     <%= fields_for(Vendor.new,url: { controller: "donuts", action: "create" }) do |v| %>
-      <%= v.label :name, "Vendor Name", class: 'form-text'  %>
+      <%= v.label :name, "Name", class: 'form-text'  %>
       <%= v.text_field :name %><br />
 
       <%= v.label :street_number, class: 'form-text' %>
