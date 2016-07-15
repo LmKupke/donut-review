@@ -62,7 +62,7 @@ class DonutsController < ApplicationController
       total_reviews.each do |review|
         @average += review.rating.to_f
       end
-      @average = @average / review_number
+      @average /= review_number
       @average = @average.round(2)
     end
   end
