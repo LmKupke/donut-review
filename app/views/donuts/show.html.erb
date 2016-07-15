@@ -1,5 +1,9 @@
 <div class="uploaded-donut-content">
-  <h1 class="donut-title"><%= @donut.name %></h1>
+  <h1 class="donut-title"><%= @donut.name %>
+    <% if @average != "No" %>
+      <%= " | " + @average.to_s + " Stars" %>
+    <% end %>
+  </h1>
   <%= image_tag(@donut.image, id: "individual-donut", class: "donut-image")%>
   <h3 class="donut-description"><%= @donut.description %></h3>
 
