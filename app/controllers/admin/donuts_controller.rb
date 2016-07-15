@@ -7,10 +7,10 @@ class Admin::DonutsController < ApplicationController
     if !@donut.nil?
       @donut.destroy
       redirect_to admin_users_path,
-        notice: "You have successfully deleted a donut and their reviews."
+      notice: "You have successfully deleted a donut and their reviews."
     else
       redirect_to admin_users_path,
-        notice: "Hmm that donut must have been deleted before or doesn't exist."
+      notice: "Hmm that donut must have been deleted before or doesn't exist."
     end
   end
 

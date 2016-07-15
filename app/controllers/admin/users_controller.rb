@@ -12,7 +12,7 @@ class Admin::UsersController < ApplicationController
     if !@user.nil?
       @user.destroy
       redirect_to admin_users_path,
-        notice: "You have successfully deleted a user"
+      notice: "You have successfully deleted a user"
     else
       redirect_to admin_users_path, notice: "Hmm something went wrong"
     end
