@@ -5,7 +5,7 @@
   </div>
 
   <%= f.label :vendor_id, class: 'form-text' %>
-  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, { include_blank: 'Add New Vendor'}, { onchange: 'showVendorForm()' } %><br />
+  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name, { prompt: "Please Select", include_blank: 'Add New Vendor'}, { onchange: 'showVendorForm()' } %><br />
 
 
   <%= f.label :image, class: 'form-text' %>
