@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  skip_before_filter :configure_permitted_parameters, only: :create
+  
   def new
     @dount = Donut.find(params[:donut_id])
     @review = Review.new
@@ -13,11 +15,10 @@ class ReviewsController < ApplicationController
     if @review.valid?
       @review.save
       ReviewMailer.new_review(@review).deliver_later
-      redirect_to donut_path(@donut)
     else
       flash[:notice] = @review.errors.full_messages.join(", ").to_s
-      redirect_to donut_path(@donut)
     end
+    redirect_to donut_path(@donut)
   end
 
   def edit
