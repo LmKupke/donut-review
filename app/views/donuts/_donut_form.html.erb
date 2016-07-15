@@ -16,7 +16,7 @@
   <div class="vendor-form" style="display:none">
     <h2><u>Add New Vendor</u></h1>
     <%= fields_for(Vendor.new,url: { controller: "donuts", action: "create" }) do |v| %>
-      <%= v.label :name, "Name", class: 'form-text'  %>
+      <%= v.label :name, "Vendor Name", class: 'form-text'  %>
       <%= v.text_field :name %><br />
 
       <%= v.label :street_number, class: 'form-text' %>
