@@ -52,8 +52,19 @@ class DonutsController < ApplicationController
   def show
     @donut = Donut.find(params[:id])
     @reviews = @donut.reviews.page(params[:page]).per(10)
-    # @vendors = Vendor.page(params[:page]).per(10)
     @review = Review.new
+    total_reviews = @donut.reviews
+    review_number = total_reviews.length
+    if review_number == 0
+      @average = "No"
+    else
+      @average = 0
+      total_reviews.each do |review|
+        @average += review.rating.to_f
+      end
+      @average = @average / review_number
+      @average = @average.round(2)
+    end
   end
 
   def destroy
