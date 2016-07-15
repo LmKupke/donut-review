@@ -9,7 +9,7 @@ $turquoise: #13bde1;
 $form-background: rgba(0, 0, 0, 0.5);
 
 .new-vendor-form-page {
-  background-image: image-url("slack-imgs.com.jpeg");
+  background-image: image-url("sky-donut.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 1000px;
@@ -43,4 +43,22 @@ $form-background: rgba(0, 0, 0, 0.5);
   font-size: 20px;
   list-style: none;
   margin-left: 50px;
+}
+
+.text-center-vendor {
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Righteous";
+}
+
+h4 {
+  font-family: "Righteous";
+  text-align: center;
+}
+
+.individual-vendor {
+  font-family: "Righteous";
 }

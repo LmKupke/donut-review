@@ -69,7 +69,6 @@ $pink: #fac8e2;
   font-family: "Muli";
   font-size: 25px;
   list-style: none;
-  margin-left: 50px;
   margin-top: 25px;
   text-align: left;
 }
@@ -158,12 +157,25 @@ h1 {
   width: 100px;
 }
 
-.row.name {
-  margin-right: 0;
+.row {
   text-align: center;
   word-wrap: break-word;
 }
 
+.name {
+  margin: 0;
+}
+
 .home_buttons {
   padding-bottom: 20px;
+}
+
+.text-center {
+  margin-top: 50px;
+}
+
+.current {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
 }
