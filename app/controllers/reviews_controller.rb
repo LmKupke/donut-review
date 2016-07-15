@@ -1,6 +1,4 @@
-class ReviewsController < ApplicationController
-  skip_before_filter :configure_permitted_parameters, only: :create
-  
+class ReviewsController < ApplicationController  
   def new
     @dount = Donut.find(params[:donut_id])
     @review = Review.new
