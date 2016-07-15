@@ -24,6 +24,7 @@
   <% @donuts.each do |donut| %>
       <tr>
         <td><%= donut.name %></td>
+        <td><%= donut.vendor.name %></td>
         <td><%= button_to "Delete", admin_donut_path(donut.id),
           id: "delete-donut-#{donut.id}", method: :delete %></td>
       </tr>
