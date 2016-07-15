@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController  
+class ReviewsController < ApplicationController
   def new
     @dount = Donut.find(params[:donut_id])
     @review = Review.new
@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.valid?
       @review.save
-      ReviewMailer.new_review(@review).deliver_later
+      # ReviewMailer.new_review(@review).deliver_later
     else
       flash[:notice] = @review.errors.full_messages.join(", ").to_s
     end
