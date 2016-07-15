@@ -11,7 +11,8 @@
       <% if user == current_user %>
         <td></td>
       <% else %>
-        <td><%= button_to 'Delete', admin_user_path(user.id), id: "delete-#{user.fullname}", method: :delete %></td>
+        <td><%= button_to 'Delete', admin_user_path(user.id),
+          id: "delete-#{user.fullname}", method: :delete %></td>
       <% end %>
     </tr>
   <% end %>
@@ -23,7 +24,9 @@
   <% @donuts.each do |donut| %>
       <tr>
         <td><%= donut.name %></td>
-        <td><%= button_to "Delete", admin_donut_path(donut.id), method: :delete %></td>
+        <td><%= donut.vendor.name %></td>
+        <td><%= button_to "Delete", admin_donut_path(donut.id),
+          id: "delete-donut-#{donut.id}", method: :delete %></td>
       </tr>
   <% end %>
 </table>

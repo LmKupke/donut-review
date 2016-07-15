@@ -8,6 +8,7 @@ feature "admin sees a list of users", %{
   context "as an authenticated admin" do
     let!(:user1) { create(:user) }
     let!(:user2) { create(:user, first_name: "John", last_name: "Smith") }
+    let!(:donut) { create(:donut) }
     before(:each) do
       admin = create(:user, role: "admin", first_name: "Boss", last_name: "Bey")
       login_as(admin)
@@ -20,6 +21,18 @@ feature "admin sees a list of users", %{
       expect(page).to have_button "Delete"
       expect(page).to have_content(user1.fullname)
       expect(page).to have_content(user2.fullname)
+    end
+
+    scenario "I will delete a user" do
+      click_button "delete-#{user2.fullname}"
+
+      expect(page).to_not have_content(user2.fullname)
+      expect(page).to have_content(user1.fullname)
+    end
+    scenario "I will delete a donut" do
+      click_button "delete-donut-#{donut.id}"
+
+      expect(page).to_not have_content(donut.name)
     end
   end
 
