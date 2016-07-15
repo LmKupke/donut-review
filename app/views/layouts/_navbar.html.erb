@@ -14,7 +14,7 @@
         <%= link_to("Sign In", new_user_session_path,
           class: "sign-links user-signs") %>
       <% end %>
-      <% if !current_page?(controller: 'donuts', action: 'index') %>
+      <% if !current_page?(root_path) %>
         <%= link_to("Home", root_path, class: "sign-links user-signs right-side") %>
       <% end %>
       <%= link_to('All Vendors', vendors_path, class: "sign-links user-signs right-side") %>
