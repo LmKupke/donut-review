@@ -13,7 +13,7 @@ image, brief description and name of that donut's vendor. Users are also able to
 review their donuts, along with the donuts uploaded by other users.
 
 Authors:
-Jenah Blitz-Stoehr, Sharon Hsu, Keane Johnson, Link Kupke, Jimmy Ranger
+Jenah Blitz-Stoehr, Sharon Hsu, Keane Johnson, Linc Kupke, Jimmy Ranger
 
 Link:
 http://donut-judge-me.herokuapp.com/
